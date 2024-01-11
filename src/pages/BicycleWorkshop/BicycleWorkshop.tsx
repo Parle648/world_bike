@@ -1,3 +1,4 @@
+import BasicServiceCost from "../../widgets/BasicServiceCost/BasicServiceCost";
 import TopHeader from "../../widgets/TopHeader/TopHeader";
 import WorkshopHeroSection from "../../widgets/WorkshopHeroSection/WorkshopHeroSection";
 
@@ -6,6 +7,7 @@ const BicycleWorkshop = () => {
         <div>
             <TopHeader />
             <WorkshopHeroSection />
+            <BasicServiceCost />
         </div>
     );
 };

@@ -3,7 +3,7 @@ import heroBackground from '../../imgs/workshop-background.png'
 
 const WorkshopHeroSection = () => {
     return (
-        <div>
+        <div className={styles.block}>
             <div className={styles.head} style={{backgroundImage: `url(${heroBackground})`, objectFit: 'cover', backgroundPosition: 'center'}}>
                 <div className="wrapper">
                     <a className={styles.link} href="/">Главная /  </a><a className={styles.link} href="bicycle-workshop">Веломастерская</a>
