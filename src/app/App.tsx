@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Scss/styles.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import AboutUs from '../pages/AboutUs/AboutUs';
 import BicycleWorkshop from '../pages/BicycleWorkshop/BicycleWorkshop';

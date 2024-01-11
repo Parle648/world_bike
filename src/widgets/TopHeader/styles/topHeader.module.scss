@@ -1,0 +1,15 @@
+@import '../../../Scss/global/global.scss';
+
+.header {
+    background: var(--bl, #101010);
+    width: 100%;
+    height: 105px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 13%;
+
+    @include md-d {
+        padding: 0 20px;
+    }
+}

@@ -1,3 +1,10 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
 body {
     overflow-x: hidden;
 }
@@ -5,7 +12,7 @@ body {
 $brackpoints: (
     sm: 450px,
     md: 750px,
-    lg: 1024px,
+    lg: 1224px,
     xl: 1440px,
 );
 

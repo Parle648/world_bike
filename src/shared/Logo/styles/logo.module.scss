@@ -1,0 +1,7 @@
+@import '../../../Scss/global/global.scss';
+
+.logo {
+    @include md-d {
+        width: 65px;
+    }
+}

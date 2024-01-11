@@ -1,7 +1,9 @@
+import TopHeader from "../../widgets/TopHeader/TopHeader";
+
 const BicycleWorkshop = () => {
     return (
         <div>
-            BicycleWorkshop
+            <TopHeader />
         </div>
     );
 };
