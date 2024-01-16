@@ -1,0 +1,106 @@
+@import '../../../Scss/global/global.scss';
+
+.form {
+    padding: 40px 0;
+}
+
+.ttl {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    margin-bottom: 32px;
+
+    font-family: 'Inter';
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 123%;
+
+    @include md-d {
+        margin-bottom: 22px;
+        font-size: 27px;
+    }
+}
+
+.label {
+    display: flex;
+    align-items: center;
+}
+
+.mail {
+    position: relative;
+    width: 346px;
+    height: 46px;
+    padding: 10px 16px;
+    margin-bottom: 14px;
+    margin-right: 15px;
+    background-color: #fff;
+
+    color: #B3B3B3;
+    border: 0;
+    border-radius: 5px;
+
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+.sendBtn {
+    display: inline-flex;
+    border: 0;
+    position: relative;
+    z-index: 2;
+    width: 180px;
+    height: 46px;
+    margin-bottom: 10px;
+    padding: 16px 80px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border-radius: 5px;
+    background: var(--orange, #F57520);
+    color: #fff;
+    text-align: right;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123%;
+
+    cursor: pointer;
+}
+
+.fakeCheckbox {
+    width: 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.agreementTtl {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox:checked + .fakeCheckbox {
+    background-color: #F57520;
+}

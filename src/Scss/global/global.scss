@@ -95,6 +95,7 @@ $brackpoints: (
 .wrapper {
     width: 1280px;
     margin: 0 auto;
+    position: relative;
 
     @include xl-d {
         width: 92%;
