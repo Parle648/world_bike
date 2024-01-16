@@ -1,0 +1,37 @@
+@import '../../../Scss/global/global.scss';
+
+.sliderBlock {
+    width: 100vw;
+    margin-bottom: 80px;
+    overflow: hidden;
+}
+
+.sliderLine {
+    width: 3840px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    animation: sliderMove 25s linear infinite;
+    
+    @include md-d {
+        width: 3100px;
+        animation: sliderMoveMobile 10s linear infinite;
+    }
+}
+
+@keyframes sliderMove {
+    0% {
+        margin-left: 0;
+    } 100% {
+        margin-left: -2005px;
+    }
+}
+@keyframes sliderMoveMobile {
+    0% {
+        margin-left: 0;
+    } 100% {
+        margin-left: -1620px;
+    }
+}
