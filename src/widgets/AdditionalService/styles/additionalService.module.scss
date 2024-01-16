@@ -55,6 +55,13 @@
     transition: .35s;
     animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
 
+    @include md-d {
+        font-size: 14px;
+        text-align: start;
+        letter-spacing: 0;
+        padding: 10px;
+    }
+
 }
 
 .body {
