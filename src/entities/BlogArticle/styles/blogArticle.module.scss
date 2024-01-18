@@ -1,0 +1,69 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    width: 400px;
+    height: 462px;
+    background-color: #101010;
+    border-radius: 10px;
+    margin-bottom: 40px;
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+.background {
+    border-radius: 10px 10px 0 0;
+    margin-bottom: 24px;
+
+    @include md-d {
+        width: 300px;
+    }
+}
+
+.date {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    padding-left: 27px;
+    margin-bottom: 8px;
+}
+
+.hashTag {
+    color: #F57520;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    padding-left: 27px;
+    margin-bottom: 16px;
+}
+
+.description {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 0.18px;
+
+    max-width: 350px;
+    margin-bottom: 19px;
+    padding-left: 27px;
+}
+
+.link {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    padding-left: 27px;
+}
