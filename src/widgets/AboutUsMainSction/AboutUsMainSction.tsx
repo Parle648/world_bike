@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import styles from './styles/aboutUsMainSction.module.scss';
 import blockDecoration from '../../imgs/block-decoration.svg';
 import someWords from '../../imgs/some-words-background.png';
-import telegram from '../../imgs/telegram.svg'
-import whatsap from '../../imgs/whatsap.svg'
-import viber from '../../imgs/wiber.svg'
+import telegram from '../../imgs/telegram.svg';
+import whatsap from '../../imgs/whatsap.svg';
+import viber from '../../imgs/wiber.svg';
+import bestFromBykes from '../../imgs/best-from-byke-world.png';
 
 const AboutUsMainSction = () => {
     return (
@@ -42,8 +43,8 @@ const AboutUsMainSction = () => {
                     </article>
                 </div>
             </div>
-            <article className={styles.someWords}>
-                <section className="wrapper">
+            <section className={styles.someWords}>
+                <div className="wrapper">
                     <h3 className={styles.someWordsTtl}>НЕСКОЛЬКО СЛОВ О НАС И НАШЕМ ДЕЛЕ</h3>
                     <p className={styles.someWordsSubttl}>
                         Велосипед — это не просто средство передвижения. Мы, команда World-Bike, уверены в этом. Для нас велосипед — это целая жизнь, полная свободы, драйва, приключений и новых открытий. 
@@ -62,9 +63,26 @@ const AboutUsMainSction = () => {
                             <img src={viber} alt="" />
                         </Link>
                     </div>
-                </section>
+                </div>
                 <img className={styles.someWordsBacground} src={someWords} alt="someWords" />
-            </article>
+            </section>
+
+            <section className={styles.bestBycycles}>
+                <div className="wrapper">
+                    <h3 className={styles.bestBycyclesTtl}>МЫ СОБРАЛИ ДЛЯ ВАС ЛУЧШЕЕ ИЗ ВЕЛОСИПЕДНОГО МирА</h3>
+
+                    <div className={styles.bestBycyclesDescript}>
+                        <p className={styles.bestBycyclesParagr}>
+                            World-Bike специализируется на продаже и обслуживании велосипедов, запчастей, аксессуаров для них и экипировки
+                        </p>
+                        <p className={styles.bestBycyclesParagr}>
+                            Мы знаем цену качеству. Поэтому в World-Bike только качественные премиальные товары по соответствующим ценам. А под заказ мы соберём для вас кастомный велосипед с уникальным дизайном и техническими характеристиками!
+                        </p>
+                    </div>
+
+                </div>
+                <img className={styles.bestBycyclesImg} src={bestFromBykes} alt="bestFromBykes" />
+            </section>
         </main>
     );
 };
