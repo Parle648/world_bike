@@ -106,3 +106,82 @@
         bottom: -50px;
     }
 }
+
+//@at-root
+
+.someWords {
+    height: 585px;
+    width: 100vw;
+    background-color: #101010;
+    
+    margin-bottom: 228px;
+    position: relative;
+    
+    @include lg-d {
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    @include md-d {
+        margin-bottom: 48px;
+    }
+}
+
+.someWordsBacground {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @include lg-d {
+        position: relative;
+        transform: translate(0, 0);
+    }
+}
+
+.someWordsTtl {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    max-width: 549px;
+
+    padding-top: 80px;
+    margin-bottom: 32px;
+
+    @include md-d {
+        font-size: 20px;
+        padding-top: 40px;
+        margin-bottom: 24px;
+    }
+}
+
+.someWordsSubttl {
+    color: #E5E5E5;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    margin-bottom: 16px;
+    max-width: 556px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+
+.socialMedias {
+    width: 152px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+
+    margin-bottom: 45px;
+}
+
