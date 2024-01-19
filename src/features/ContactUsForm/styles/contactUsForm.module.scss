@@ -1,0 +1,101 @@
+@import '../../../Scss/global/global.scss';
+
+.form {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-width: 608px;
+    position: relative;
+    z-index: 2;
+}
+
+.ttl {
+    max-width: 620px;
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-bottom: 32px;
+    padding-top: 52px;
+
+    @include md-d {
+        font-size: 23px;
+    }
+}
+
+.fieldset {
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 16px;
+
+    @include md-d {
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+}
+
+.input {
+    width: 295px;
+    height: 46px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+
+    border: 0px;
+
+    @include md-d {
+        margin-bottom: 16px;
+        width: 100%;
+    }
+}
+
+.textArea {
+    height: 154px;
+    margin-bottom: 24px;
+    padding: 10px 16px;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #B3B3B3;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+
+    border: 0px;
+}
+
+.submit {
+    width: 100%;
+    height: 52px;
+    padding: 16px 80px;
+    margin-bottom: 24px;
+
+    color: #F57520;
+    text-align: center;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123%;
+
+    border: 0px;
+    border-radius: 10px;
+    background-color: #fff;
+    cursor: pointer;
+    transition: .25s;
+
+    &:hover {
+        background-color: #B3B3B3;
+    }
+}

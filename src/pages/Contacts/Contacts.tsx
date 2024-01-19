@@ -1,6 +1,7 @@
 import CompaniesSlider from "../../widgets/CompaniesSlider/CompaniesSlider";
 import ContactsMapDescription from "../../widgets/ContactMapDescription/ContactsMapDescription";
 import ContactsHeroSection from "../../widgets/ContactsHeroSection/ContactsHeroSection";
+import ContactUsWidget from "../../widgets/ContactUsWidget/ContactUsWidget";
 import Footer from "../../widgets/Footer/Footer";
 import InteractiveMap from "../../widgets/InteractiveMap/InteractiveMap";
 import Newsletter from "../../widgets/Newsletter/Newsletter";
@@ -13,6 +14,7 @@ const Contacts = () => {
             <ContactsHeroSection />
             <InteractiveMap />
             <ContactsMapDescription />
+            <ContactUsWidget />
             <CompaniesSlider />
             <Newsletter />
             <Footer />
