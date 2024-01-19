@@ -1,4 +1,5 @@
 import AboutUsHeroSection from "../../widgets/AboutUsHeroSection/AboutUsHeroSection";
+import AboutUsMainSction from "../../widgets/AboutUsMainSction/AboutUsMainSction";
 import CompaniesSlider from "../../widgets/CompaniesSlider/CompaniesSlider";
 import ContactsMapDescription from "../../widgets/ContactMapDescription/ContactsMapDescription";
 import Footer from "../../widgets/Footer/Footer";
@@ -11,6 +12,7 @@ const AboutUs = () => {
         <div>
             <TopHeader />
             <AboutUsHeroSection />
+            <AboutUsMainSction />
             <InteractiveMap />
             <ContactsMapDescription />
             <CompaniesSlider />
