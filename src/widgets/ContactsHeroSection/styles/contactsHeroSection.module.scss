@@ -1,13 +1,5 @@
 @import '../../../Scss/global/global.scss';
 
-.block {
-    margin-bottom: 64px;
-
-    @include md-d {
-        margin-bottom: 48px;
-    }
-}
-
 .head {
     width: 100%;
     height: 278px;

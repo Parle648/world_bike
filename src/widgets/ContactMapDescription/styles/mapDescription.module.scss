@@ -1,0 +1,62 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 160px;
+
+    @include lg-d {
+        flex-direction: column;
+        margin-bottom: 48px;
+    }
+}
+
+.column:last-child {
+    width: 620px;
+
+    @include md-d {
+        width: 92vw;
+    }
+}
+
+.ttl,
+.paragraph {
+    color: #101010;
+    font-family: 'Inter';
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.18px;
+
+    margin-bottom: 16px;
+}
+
+.paragraph {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.informItem {
+    color: #777;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+
+    @include lg-d {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 14px;
+        max-width: 92vw;
+    }
+}
