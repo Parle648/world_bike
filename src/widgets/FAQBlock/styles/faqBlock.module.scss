@@ -16,6 +16,10 @@
     font-weight: 400;
 
     margin-bottom: 48px;
+    
+    @include md-d {
+        font-size: 36px;
+    }
 }
 
 .head {
