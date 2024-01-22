@@ -258,8 +258,14 @@
     margin-left: 16%;
     overflow: scroll;
 
+    margin-bottom: 160px;
+
     &::-webkit-scrollbar {
         width: 0;
+    }
+
+    @include md-d {
+        margin-bottom: 48px;
     }
 }
 
@@ -315,4 +321,67 @@
     letter-spacing: 0.18px;
 
     margin-right: 16px;
+}
+
+//@at-root
+
+.haveQuestion {
+    width: 100vw;
+    height: 383px;
+    background-color: #F57520;
+    position: relative;
+
+    margin-bottom: 160px;
+
+    @include md-d {
+        margin-bottom: 48px;
+        padding-bottom: 20px;
+        height: auto;
+    }
+}
+
+.haveQuestionTtl,
+.callUsTtl,
+.number,
+.haveQuestionParagr {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-bottom: 32px;
+    padding-top: 45px;
+
+    @include md-d {
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+}
+
+.callUsTtl {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.number {
+    padding: 0;
+}
+
+.haveQuestionParagr {
+    font-size: 16px;
+    max-width: 534px;
+    padding-top: 16px;    
+}
+
+.haveQuestionImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include lg-d {
+        display: none;
+    }
 }

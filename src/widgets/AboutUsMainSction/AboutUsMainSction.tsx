@@ -7,6 +7,7 @@ import telegram from '../../imgs/telegram.svg';
 import whatsap from '../../imgs/whatsap.svg';
 import viber from '../../imgs/wiber.svg';
 import bestFromBykes from '../../imgs/best-from-byke-world.png';
+import haveQuestion from '../../imgs/abou-us-question-background.png';
 
 const AboutUsMainSction = () => {
     return (
@@ -144,6 +145,19 @@ const AboutUsMainSction = () => {
                             </div>
                         </div>
                     </div>
+            </section>
+
+            <section className={styles.haveQuestion}>
+                <div className="wrapper">
+                    <h3 className={styles.haveQuestionTtl}>Остались вопросы? </h3>
+                    <h4 className={styles.callUsTtl}>Позвоните нам по номеру</h4>
+                    <Link className={styles.number} to='#!'>+7 (495) 055-75-86</Link>
+                    <p className={styles.haveQuestionParagr}>
+                        Мы к вашим услугам! И, конечно же, приходите в наш магазин, чтобы посмотреть товары вживую, лично оценить качество и 
+                        сделать правильный выбор!
+                    </p>
+                </div>
+                <img className={styles.haveQuestionImg} src={haveQuestion} alt="haveQuestion" />
             </section>
         </main>
     );
