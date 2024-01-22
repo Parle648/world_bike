@@ -83,6 +83,68 @@ const AboutUsMainSction = () => {
                 </div>
                 <img className={styles.bestBycyclesImg} src={bestFromBykes} alt="bestFromBykes" />
             </section>
+
+            <section className={styles.weTheBest}>
+                    <div className='wrapper'>
+                        <h3 className={styles.weTheBestTtl}>Мы — официальные дилеры лучших брендов:</h3>
+                    </div>
+
+                    <div className={styles.weTheBestSlider}>
+                        <div className={styles.weTheBestSliderLine}>
+                            <div className={styles.weTheBestSliderItem}>
+                                <h4 className={styles.weTheBestSliderTtl}>Велосипеды</h4>
+                                <ul className={styles.weTheBestSliderList}>
+                                    <li><Link className={styles.weTheBestLink} to=''>BMC</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cervelo</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cipollini</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Colnago</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Early Rider</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Giant</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Look</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Orbea</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Pinarello</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Scott</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Wilier</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Officine Mattio</Link></li>
+                                </ul>
+                            </div>
+                            <div className={styles.weTheBestSliderItem}>
+                                <h4 className={styles.weTheBestSliderTtl}>Велосипеды</h4>
+                                <ul className={styles.weTheBestSliderList}>
+                                    <li><Link className={styles.weTheBestLink} to=''>BMC</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cervelo</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cipollini</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Colnago</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Early Rider</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Giant</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Look</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Orbea</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Pinarello</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Scott</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Wilier</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Officine Mattio</Link></li>
+                                </ul>
+                            </div>
+                            <div className={styles.weTheBestSliderItem}>
+                                <h4 className={styles.weTheBestSliderTtl}>Велосипеды</h4>
+                                <ul className={styles.weTheBestSliderList}>
+                                    <li><Link className={styles.weTheBestLink} to=''>BMC</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cervelo</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Cipollini</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Colnago</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Early Rider</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Giant</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Look</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Orbea</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Pinarello</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Scott</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Wilier</Link></li>
+                                    <li><Link className={styles.weTheBestLink} to=''>Officine Mattio</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </section>
         </main>
     );
 };

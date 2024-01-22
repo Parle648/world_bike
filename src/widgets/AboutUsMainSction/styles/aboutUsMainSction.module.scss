@@ -197,14 +197,25 @@
 
     max-width: 800px;
     margin-bottom: 48px;
+
+    @include md-d {
+        font-size: 26px;
+    } 
 }
 
 .bestBycyclesDescript {
     display: grid;
     grid-template-columns: 400px 730px;
     grid-gap: 100px 0;
-
+    
     margin-bottom: 40px;
+    
+    @include lg-d {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 20px 0;
+    }
 }
 
 .bestBycyclesParagr {
@@ -219,4 +230,89 @@
 .bestBycyclesImg {
     width: 100vw;
     margin-bottom: 56px;
+
+    @include md-d {
+        margin-bottom: 24px;
+    }
+}
+
+.weTheBestTtl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.24px;
+
+    margin-bottom: 48px;
+
+    @include md-d {
+        margin-bottom: 24px;
+        font-size: 16px;
+    }
+}
+
+.weTheBestSlider {
+    width: 84vw;
+    margin-left: 16%;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.weTheBestSliderLine {
+    width: 2000px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md-d {
+        width: 850px;
+    }
+}
+
+.weTheBestSliderItem {
+    display: flex;
+    width: 630px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 10px;
+    background: #2E2E2E;
+
+    color: #fff;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.24px;
+
+    @include md-d {
+        width: 270px;
+    } 
+}
+
+.weTheBestSliderList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.weTheBestLink {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    letter-spacing: 0.18px;
+
+    margin-right: 16px;
 }
