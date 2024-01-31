@@ -1,0 +1,26 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    background-color: #F57520;
+    width: 100vw;
+    height: 636px;
+
+    margin-bottom: 160px;
+    position: relative;
+
+    @include md-d {
+        height: auto;
+        margin-bottom: 48px;
+    }
+}
+
+.background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+
+    @include lg-d {
+        display: none;
+    }
+}

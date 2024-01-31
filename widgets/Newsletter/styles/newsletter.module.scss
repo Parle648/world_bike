@@ -1,0 +1,21 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    width: 100vw;
+    height: 275px;
+    background: #131313;
+
+    @include md-d {
+        height: auto;
+    }
+}
+
+.background {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @include lg-d {
+        display: none;
+    }
+}

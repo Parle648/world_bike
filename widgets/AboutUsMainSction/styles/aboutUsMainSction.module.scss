@@ -1,0 +1,387 @@
+@import '../../../Scss/global/global.scss';
+
+.whatsBicyclettl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 70px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 123%;
+    letter-spacing: 2.2px;
+
+    margin-bottom: 80px;
+
+    @include md-d {
+        font-size: 35px;
+        margin-bottom: 34px;
+    }
+}
+
+.whatsBicycleSliderWrapper {
+    width: 100%;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.whatsBicycleSlider {
+    width: 1280px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 160px;
+
+    @include md-d {
+        width: 780px;
+        margin-bottom: 48px;
+    }
+}
+
+.whatsItem {
+    width: 400px;
+    padding: 32px;
+    height: 334px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #34312D;
+    overflow: hidden;
+
+    position: relative;
+
+    @include md-d {
+        width: 250px;
+        height: 470px;
+    }
+}
+
+.whatsDarkItem {
+    background-color: #2E2E2E;
+}
+
+.whatsOrangeItem {
+    background-color: #F57520;
+}
+
+.whatsItemTtl {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.24px;
+
+    margin-bottom: 16px;
+}
+
+.whatsItemDescription {
+    color: #E5E5E5;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+
+    margin-bottom: 32px;
+}
+
+.whatsItemLink {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123%;
+}
+
+.blockDecoration {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include md-d {
+        bottom: -50px;
+    }
+}
+
+//@at-root
+
+.someWords {
+    height: 585px;
+    width: 100vw;
+    background-color: #101010;
+    
+    margin-bottom: 228px;
+    position: relative;
+    
+    @include lg-d {
+        height: auto;
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    @include md-d {
+        margin-bottom: 48px;
+    }
+}
+
+.someWordsBacground {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    @include lg-d {
+        position: relative;
+        transform: translate(0, 0);
+    }
+}
+
+.someWordsTtl {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    max-width: 549px;
+
+    padding-top: 80px;
+    margin-bottom: 32px;
+
+    @include md-d {
+        font-size: 20px;
+        padding-top: 40px;
+        margin-bottom: 24px;
+    }
+}
+
+.someWordsSubttl {
+    color: #E5E5E5;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+
+    margin-bottom: 16px;
+    max-width: 556px;
+
+    @include md-d {
+        font-size: 14px;
+    }
+}
+
+
+.socialMedias {
+    width: 152px;
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;    
+
+    margin-bottom: 45px;
+}
+
+//@at-root
+
+.bestBycyclesTtl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+
+    max-width: 800px;
+    margin-bottom: 48px;
+
+    @include md-d {
+        font-size: 26px;
+    } 
+}
+
+.bestBycyclesDescript {
+    display: grid;
+    grid-template-columns: 400px 730px;
+    grid-gap: 100px 0;
+    
+    margin-bottom: 40px;
+    
+    @include lg-d {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        grid-gap: 20px 0;
+    }
+}
+
+.bestBycyclesParagr {
+    color: #777;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.bestBycyclesImg {
+    width: 100vw;
+    margin-bottom: 56px;
+
+    @include md-d {
+        margin-bottom: 24px;
+    }
+}
+
+.weTheBestTtl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.24px;
+
+    margin-bottom: 48px;
+
+    @include md-d {
+        margin-bottom: 24px;
+        font-size: 16px;
+    }
+}
+
+.weTheBestSlider {
+    width: 84vw;
+    margin-left: 16%;
+    overflow: scroll;
+
+    margin-bottom: 160px;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    @include md-d {
+        margin-bottom: 48px;
+    }
+}
+
+.weTheBestSliderLine {
+    width: 2000px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md-d {
+        width: 850px;
+    }
+}
+
+.weTheBestSliderItem {
+    display: flex;
+    width: 630px;
+    padding: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+    border-radius: 10px;
+    background: #2E2E2E;
+
+    color: #fff;
+    font-family: "Inter";
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.24px;
+
+    @include md-d {
+        width: 270px;
+    } 
+}
+
+.weTheBestSliderList {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+.weTheBestLink {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 160%;
+    letter-spacing: 0.18px;
+
+    margin-right: 16px;
+}
+
+//@at-root
+
+.haveQuestion {
+    width: 100vw;
+    height: 383px;
+    background-color: #F57520;
+    position: relative;
+
+    margin-bottom: 160px;
+
+    @include md-d {
+        margin-bottom: 48px;
+        padding-bottom: 20px;
+        height: auto;
+    }
+}
+
+.haveQuestionTtl,
+.callUsTtl,
+.number,
+.haveQuestionParagr {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-bottom: 32px;
+    padding-top: 45px;
+
+    @include md-d {
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+}
+
+.callUsTtl {
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.number {
+    padding: 0;
+}
+
+.haveQuestionParagr {
+    font-size: 16px;
+    max-width: 534px;
+    padding-top: 16px;    
+}
+
+.haveQuestionImg {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    @include lg-d {
+        display: none;
+    }
+}

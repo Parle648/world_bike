@@ -1,0 +1,71 @@
+@import '../../../../Scss/global/global.scss';
+
+.ttl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-bottom: 80px;
+    padding-top: 160px;
+}
+
+.line {
+    width: 2500px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.img {
+    @include xl-d {
+        display: none;
+    }
+}
+
+.flex {
+    width: 620px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include xl-d {
+        width: auto;
+    }
+}
+
+.flexItem {
+    width: 290px;
+    height: 267px;
+    background-color: #F57520;
+
+    border-radius: 10px;
+    padding: 32px;
+    margin-bottom: 40px;
+}
+
+.flexTtl,
+.flexParagraph,
+.link {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+
+    margin-bottom: 16px;
+}
+
+.flexParagraph {
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.link {
+    margin-bottom: 0;
+}
