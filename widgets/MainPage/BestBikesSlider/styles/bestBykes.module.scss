@@ -1,0 +1,68 @@
+@import '../../../../Scss/global/global.scss';
+
+.block {
+    width: 100vw;
+    height: 771px;
+    background-color: #101010;
+    position: relative;
+}
+
+.splash {
+    opacity: .3;    
+    box-shadow: 10px 130px 136px -50px rgba(0,0,0,1) inset;
+    -webkit-box-shadow: 10px 130px 136px -50px rgba(0,0,0,1) inset;
+    -moz-box-shadow: 10px 130px 136px -50px rgba(0,0,0,1) inset;
+    left: 0;
+    bottom: 0;
+    height: 771px;
+
+    position: absolute;
+
+    @include md-d {
+        display: none;
+    }
+}
+
+.ttl {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    position: relative;
+    z-index: 2;
+
+    padding-top: 80px;
+    width: 360px;
+
+    @include md-d {
+        width: 300px;
+        font-size: 34px;
+
+        margin-bottom: 32px;
+        padding-top: 40px;
+    }
+}
+
+//@at-root
+
+.slider {
+    overflow: scroll;
+
+    -webkit-overflow-scrolling: inherit;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+}
+
+.sliderLine {
+    margin-left: 330px;
+    display: flex;
+    align-items: flex-start;
+
+    @include md-d {
+        margin: 0;
+    }
+}

@@ -1,0 +1,175 @@
+@import '../../../../Scss/global/global.scss';
+
+.block {
+    margin-bottom: 160px;
+
+    @include md-d {
+        margin-bottom: 48px;
+    }
+}
+
+.ttl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 700;
+
+    margin-bottom: 80px;
+    padding-top: 160px;
+
+    @include md-d {
+        font-size: 44px;
+        margin-bottom: 48px;
+        padding-top: 80px;
+    }
+}
+
+.gridContainer {
+    display: grid;
+    grid-template-rows: 300px 190px 252px;
+    grid-template-columns: 400px 400px 448px;
+    grid-gap: 16px;
+    
+    @include lg-d {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 300px 252px 252px;
+    }
+
+    @include md-d {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.gridFirst {
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+    background-color: #F57520;
+    position: relative;
+    overflow: hidden;
+
+    padding: 122px 80px;
+    cursor: pointer;
+
+    grid-column-start: 1;
+    grid-column-end: 4;
+
+    @include lg-d {
+        width: 97%;
+    }
+
+    @include md-d {
+        width: 100%;
+    }
+}
+
+.gridTradeIn {
+    height: 458px;
+    width: 400px;
+    background-color: #101010;
+    border-radius: 10px;
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 80px;
+    text-align: center;
+
+    @include lg-d {
+        grid-column-end: 4;
+        grid-column-start: 1;
+        width: 97%;
+        height: 300px;
+    }
+
+    @include md-d {
+        width: 100%;
+    }
+}
+
+.gridTools,
+.gridEquip,
+.gridMachines,
+.gridAccessories {
+    width: 400px;
+    height: 190px;
+    padding: 67px 40px;
+    border-radius: 10px;
+    position: relative;
+    background-color: #101010;
+    overflow: hidden;
+
+    @include lg-d {
+        height: 239px;
+        width: 100%;
+    }
+}
+
+.gridEquip,
+.gridMachines {
+    width: 448px;
+    height: 239px;
+    padding: 40px;
+
+    @include md-d {
+        width: 100%;
+    }
+}
+
+.gridMachines {
+    height: 203px;
+    margin-top: 48px;
+    grid-row-start: 3;
+    grid-column-start: 3;
+    
+    @include lg-d {
+        grid-row-start: 4;
+        grid-column-start: 2;
+        margin-top: 0;
+        height: 239px;
+        width: 100%;
+    }
+}
+
+.gridAccessories {
+    height: 252px;
+    padding-top: 167px;
+    grid-column-start: 2;
+        
+    @include lg-d {
+        grid-row-start: 4;
+        grid-column-start: 1;
+        height: 239px;
+        width: 100%;
+    }
+}
+
+.grindTtl {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    @include sm-d {
+        font-size: 33px;
+    }
+}
+
+.img,
+.toolsImg {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    @include md-d {
+        height: 150px;
+    }
+}
+
+.toolsImg {
+    top: 0;
+}

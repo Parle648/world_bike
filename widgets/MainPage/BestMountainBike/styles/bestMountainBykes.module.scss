@@ -1,0 +1,134 @@
+@import '../../../../Scss/global/global.scss';
+
+.block {
+    background-color: #F8F8F8;
+    padding-bottom: 80px;
+}
+
+.ttl {
+    color: #101010;
+    font-family: "Inter";
+    font-size: 44px;
+    font-style: normal;
+    font-weight: 400;
+
+    margin-bottom: 80px;
+    padding-top: 132px;
+    max-width: 360px;
+
+    @include md-d {
+        padding-top: 40px;
+        margin-bottom: 32px;
+    }
+}
+
+.contant {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include md-d {
+        flex-direction: column;
+    }
+}
+
+
+.bykePartsContainer {
+    @include md-d {
+        width: 92vw;
+        overflow: scroll;
+        &:-webkit-scrollbar {
+            width: 0;
+        }
+    }
+}
+
+.bikeParts {
+    width: 620px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include md-d {
+        width: 1250px;
+        flex-wrap: nowrap;
+        overflow: scroll;
+    }
+}
+
+.bikePart {
+    width: 302px;
+    height: 233px;
+    margin-bottom: 16px;
+    padding: 31px 25px;
+
+    background-color: #34312D;
+
+    border-radius: 10px;
+
+
+}
+
+.bikePartTtl {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 160%;
+    letter-spacing: 0.2px;
+
+    margin-bottom: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bikePartDescription {
+    color: #fff;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+}
+
+.whyMountainImg {
+    margin-bottom: 29px;
+
+    @include md-d {
+        width: 89vw;
+    }
+}
+
+.whyMountainDescription {
+    color: #4C4C4C;
+    font-family: 'Inter';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+
+    max-width: 508px;
+    margin-bottom: 40px;
+}
+
+.catalogLink {
+    color: #fff;
+    font-family: "Inter";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 123%; 
+
+    padding: 16px;
+    text-align: center;
+    background-color: #F57520;
+    border-radius: 10px;
+
+    display: block;
+    width: 180px;
+    height: 52px;
+}
