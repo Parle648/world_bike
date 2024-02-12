@@ -1,5 +1,4 @@
-import React from 'react';
-import styles from './styles/productCard.module.scss';
+import styles from './styles/productListCard.module.scss';
 
 type ProductCardType = {
     country: string,
@@ -9,7 +8,7 @@ type ProductCardType = {
     cost: string,
 }
 
-const ProductListCart = ({country, soldOut, image, title, cost}: ProductCardType) => {
+const ProductCard = ({country, soldOut, image, title, cost}: ProductCardType) => {
     return (
         <div className={styles.block}>
             <img className={styles.flag} src={country} alt="country" />
@@ -22,4 +21,4 @@ const ProductListCart = ({country, soldOut, image, title, cost}: ProductCardType
     );
 };
 
-export default ProductListCart
+export default ProductCard

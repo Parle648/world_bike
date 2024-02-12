@@ -1,0 +1,104 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    margin: 0 auto;
+}
+
+.activities {
+    width: 950px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 44px;
+
+
+    @include md-d {
+        width: 92%;
+    }
+    
+    @include sm-d {
+        margin: 0 auto 24px;
+    }
+}
+
+.chooseListTemplate {
+    width: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md-d {
+        display: none;
+    }
+}
+
+.ninePlates {
+    display: grid;
+    grid-template-columns: repeat(3, 7px);
+    grid-template-rows: repeat(3, 7px);
+    grid-gap: 1px;
+
+    cursor: pointer;
+}
+
+.fourPlates {
+    display: grid;
+    grid-template-columns: repeat(2, 11px);
+    grid-template-rows: repeat(2, 11px);
+    grid-gap: 1px;
+
+    cursor: pointer;
+}
+
+.ninePlatesItem,
+.fourPlatesItem {
+    width: 7px;
+    height: 7px;
+    border-radius: 2px;
+    border: 1px solid #777;
+    background-color: #777;
+}
+
+.fourPlatesItem {
+    width: 11px;
+    height: 11px;
+    background-color: #fff;
+    border-radius: 3px;
+}
+
+.filtersOpen {
+    display: none;
+    width: 64px;
+    height: 64px;
+    background-color: #fff;
+    cursor: pointer;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+
+    &:hover {
+        background-color: #E5E5E5;
+    }
+
+    @include md-d {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+// 
+
+.list {
+    width: 950px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include md-d {
+        width: 92%;
+        margin: 0 auto;
+        justify-content: center;
+    }
+}
