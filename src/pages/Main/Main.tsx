@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-const Main = () => {
-    return (
-        <div>
-            Main
-=======
 import CompaniesSlider from "../../widgets/CompaniesSlider/CompaniesSlider";
 import ContactsMapDescription from "../../widgets/ContactMapDescription/ContactsMapDescription";
 import Footer from "../../widgets/Footer/Footer";
@@ -32,7 +26,6 @@ const Main = () => {
             <ContactsMapDescription />
             <Newsletter />
             <Footer />
->>>>>>> 9c3c47e... middle state
         </div>
     );
 };
