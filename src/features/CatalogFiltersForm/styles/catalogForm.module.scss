@@ -1,0 +1,188 @@
+.form {
+    width: 290px;
+}
+
+.hasOnlyLabel {
+    display: flex;
+    align-items: baseline;
+
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E5E5E5;
+    margin-bottom: 24px;
+}
+
+.formTtl,
+.formCheckboxTtl {
+    width: 258px;
+    height: 29px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    color: #34312D;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+    position: relative;
+
+}
+
+.fakeCheckbox {
+    width: 41px;
+    height: 21px;
+    border-radius: 10px;
+    background: #F57520;
+    position: relative;
+
+    &::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-color: #fff;
+        border-radius: 50%;
+        
+        position: absolute;
+        top: 3px;
+        left: 3px;
+
+        transition: .35s;
+    }
+}
+
+.hasOnly,
+.input {
+    display: none;
+}
+
+.hasOnly:checked + .fakeCheckbox::before{
+    right: 3px;
+    left: auto;
+    transition: .35s;
+}
+
+.checkboxBlock {
+    display: block;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E5E5E5;
+
+    margin-bottom: 20px;
+}
+
+.arrow {
+    cursor: pointer;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.formCheckboxTtl {
+    font-size: 16px;
+    color: #777777;
+
+    margin-bottom: 10px;
+}
+
+.fakeSquareCheckbox {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid #34312D;
+    border-radius: 3px;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input:checked + .fakeSquareCheckbox {
+    background-color: #F57520;
+    border-color: #F57520;
+}
+
+// 
+
+.costSlider {
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    background-color: #E5E5E5;
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 24px;
+}
+
+.costMin,
+.costMax {
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 5px solid #101010;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.rangeBlock {
+    background-color: #101010;
+}
+
+.costInputsContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.costInput {
+    width: 109px;
+    height: 46px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+
+    padding: 24px;
+
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    &[type=number] {
+        -moz-appearance: textfield;
+    }
+}
+
+// 
+
+
+
+.removeFilters {
+    width: 290px;
+    height: 50px;
+    padding: 16px 10px 16px 10px;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #fff;
+
+    color: #101010;
+
+    &:hover {
+        background-color: #E5E5E5;
+        cursor: pointer;
+    }
+}
