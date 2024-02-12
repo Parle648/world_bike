@@ -22,6 +22,7 @@ const Main = () => {
             <BestBikesSlider />
             <BestMountainBike />
             <Benefits />
+            <NewBikes />
             <InteractiveMap />
             <ContactsMapDescription />
             <Newsletter />
