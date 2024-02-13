@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './styles/accountBlock.module.scss';
+import PersonalDataForm from '../../features/PersonalDataForm/PersonalDataForm';
 
 const AccountBlock = () => {
     return (
@@ -17,6 +18,7 @@ const AccountBlock = () => {
                         </li>
                     </ul>
                 </div>
+                <PersonalDataForm />
             </main>
         </div>
     );

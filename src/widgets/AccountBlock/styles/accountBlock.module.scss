@@ -1,10 +1,18 @@
+@import '../../../Scss/global/global.scss';
+
 .block {
+    padding-top: 64px;
     margin-bottom: 160px;
+    display: flex;
+    align-items: flex-start;
+
+    @include md-d {
+        flex-direction: column;
+    }
 }
 
 .navigationBlock {
     width: 290px;
-    padding-top: 64px;
 }
 
 .ttl {
