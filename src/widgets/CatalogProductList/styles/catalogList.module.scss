@@ -5,16 +5,20 @@
 }
 
 .activities {
-    width: 950px;
+    width: 900px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     margin-bottom: 44px;
 
+    @include lg-d {
+        width: 92%;
+        margin-left: 20px;
+    }
 
     @include md-d {
-        width: 92%;
+        width: 90%;
     }
     
     @include sm-d {
@@ -90,11 +94,15 @@
 // 
 
 .list {
-    width: 950px;
+    width: 900px;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
     justify-content: space-between;
+
+    @include lg-d {
+        width: 92%;
+    }
 
     @include md-d {
         width: 92%;

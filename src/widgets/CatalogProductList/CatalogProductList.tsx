@@ -5,6 +5,7 @@ import flag from '../../imgs/italy-flag.png';
 import bike from '../../imgs/bike-img.png';
 import SortByFeature from '../../features/SortByFeature/SortByFeature';
 import filter from '../../imgs/filter.svg';
+import ListPagesFeature from '../../features/ProductListPages/ListPagesFeature';
 
 const CatalogProductList = () => {
     return (
@@ -45,6 +46,7 @@ const CatalogProductList = () => {
                 <ProductListCard country={flag} soldOut={false} image={bike} title='Trek Verve 2 Disc Lithium Grey HYBD 2022' cost='45 000' />
                 <ProductListCard country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
             </div>
+            <ListPagesFeature />
         </div>
     );
 };

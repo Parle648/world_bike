@@ -1,5 +1,5 @@
 import CatalogHeroSection from "../../widgets/CatalogHeroSection/CatalogHeroSection";
-import CatalogProductList from "../../widgets/CatalogProductList/CatalogProductList";
+import CatalogMainSection from "../../widgets/CatalogMainSection/CatalogMainSection";
 import Footer from "../../widgets/Footer/Footer";
 import Newsletter from "../../widgets/Newsletter/Newsletter";
 import TopHeader from "../../widgets/TopHeader/TopHeader";
@@ -9,7 +9,7 @@ const Catalog = () => {
         <div>
             <TopHeader />
             <CatalogHeroSection />
-            <CatalogProductList />
+            <CatalogMainSection />
             <Newsletter />
             <Footer />
         </div>

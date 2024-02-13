@@ -1,7 +1,7 @@
 @import '../../../Scss/global/global.scss';
 
 .block {
-    width: 250px;
+    width: 280px;
     height: 443px;
     padding: 12px;
     margin-bottom: 24px;
@@ -24,8 +24,8 @@
 
 .flag {
     position: absolute;
-    left: 0;
-    top: 0;
+    width: 72px;
+    height: 38px;
 }
 
 .soldOut,
