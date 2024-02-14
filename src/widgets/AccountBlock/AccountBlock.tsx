@@ -6,6 +6,7 @@ import ProductSnippet from '../../entities/ProductSnippet/ProductSnippet';
 import bike from '../../imgs/bike-img.png';
 import DropDown from '../../features/OrderDropDown/OrderDropDown';
 import OrdersHistory from '../OrdersHistory/OrdersHistory';
+import ChangePasswodForm from '../../features/ChangePasswordForm/ChangePasswodForm';
 
 const BodyTrigger = () => {
     return (
@@ -31,8 +32,11 @@ const AccountBlock = () => {
                         </li>
                     </ul>
                 </div>
-                {/* <PersonalDataForm /> */}
-                <OrdersHistory />
+                {/* <PersonalDataForm /> */} 
+                {/* <OrdersHistory /> */}
+
+                <ChangePasswodForm />
+                
             </main>
         </div>
     );
