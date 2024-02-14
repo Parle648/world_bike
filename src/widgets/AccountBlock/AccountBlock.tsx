@@ -1,6 +1,19 @@
 import React from 'react';
 import styles from './styles/accountBlock.module.scss';
 import PersonalDataForm from '../../features/PersonalDataForm/PersonalDataForm';
+import ProductSnippet from '../../entities/ProductSnippet/ProductSnippet';
+
+import bike from '../../imgs/bike-img.png';
+import DropDown from '../../features/OrderDropDown/OrderDropDown';
+import OrdersHistory from '../OrdersHistory/OrdersHistory';
+
+const BodyTrigger = () => {
+    return (
+        <>
+            <span ></span>
+        </>
+    );
+}
 
 const AccountBlock = () => {
     return (
@@ -18,7 +31,8 @@ const AccountBlock = () => {
                         </li>
                     </ul>
                 </div>
-                <PersonalDataForm />
+                {/* <PersonalDataForm /> */}
+                <OrdersHistory />
             </main>
         </div>
     );
