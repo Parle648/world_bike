@@ -5,7 +5,7 @@ import QuickBuySnippet from '../QuickBuySnippet/QuickBuySnippet';
 import QuickOrderForm from '../../features/QuickOrderForm/QuickOrderForm';
 import bicycle from '../../imgs/bike-img.png';
 
-const ProductCard = ({country, soldOut, image, title, cost}: productCardType) => {
+const ProductListCart = ({country, soldOut, image, title, cost}: productCardType) => {
 
     const [opened, setOpened] = React.useState<boolean>(true);
 
@@ -32,4 +32,4 @@ const ProductCard = ({country, soldOut, image, title, cost}: productCardType) =>
     );
 };
 
-export default ProductCard
+export default ProductListCart;

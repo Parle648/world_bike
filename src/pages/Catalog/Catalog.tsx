@@ -1,7 +1,17 @@
+import CatalogHeroSection from "../../widgets/CatalogHeroSection/CatalogHeroSection";
+import CatalogMainSection from "../../widgets/CatalogMainSection/CatalogMainSection";
+import Footer from "../../widgets/Footer/Footer";
+import Newsletter from "../../widgets/Newsletter/Newsletter";
+import TopHeader from "../../widgets/TopHeader/TopHeader";
+
 const Catalog = () => {
     return (
         <div>
-            Catalog
+            <TopHeader />
+            <CatalogHeroSection />
+            <CatalogMainSection />
+            <Newsletter />
+            <Footer />
         </div>
     );
 };

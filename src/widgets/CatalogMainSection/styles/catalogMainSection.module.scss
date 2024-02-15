@@ -1,0 +1,21 @@
+@import '../../../Scss/global/global.scss';
+
+.block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    margin-bottom: 160px;
+
+    @include md-d {
+        justify-content: center;
+        margin-bottom: 64px;
+    }
+
+}
+
+.desctopFilter {
+    @include md-d {
+        display: none;
+    }
+}
