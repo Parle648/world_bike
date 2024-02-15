@@ -3,22 +3,23 @@ import styles from './styles/quickBuySnippet.module.scss';
 import close from  '../../imgs/close.svg';
 import quickBuyProps from './types/quickBuyProps';
 
-const QuickBuySnippet = ({img, title, opened, children}: quickBuyProps) => {
-    const [disabled, setDisabled] = React.useState(opened);
-    function closePopUp() {
-        setDisabled(!disabled)
-    }
+const QuickBuySnippet = ({img, title, opened, setOpened, children}: quickBuyProps) => {
+    
 
     React.useEffect(() => {
-        if (!disabled) {
+        if (!opened) {
             document.body.style.overflow = "hidden";
         } else {
             document.body.style.overflow = "auto";
         }
-    }, [disabled])
+    }, [opened])
+
+    function closePopUp() {
+        setOpened(!opened);
+    }
 
     return (
-       <div className={`${styles.blockBackroundShadow} ${disabled && styles.blockDisabled}`}>
+       <div className={`${styles.blockBackroundShadow} ${opened && styles.blockDisabled}`} >
             <div className={styles.block}>
                 <button className={styles.closeBtn} onClick={closePopUp}><img src={close} alt="close" /></button>
     
