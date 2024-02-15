@@ -1,0 +1,90 @@
+@import '../../../Scss/global/global.scss';
+
+.form {
+    width: 620px;
+    margin-left: 160px;
+
+    @include md-d {
+        width: 92vw;
+        margin-left: 0;
+    }
+}
+
+.ttl {
+    font-family: 'Inter';
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 49px;
+
+    color: #101010;
+    margin-bottom: 64px;
+}
+
+.fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 0;
+}
+
+.inputTitle {
+    font-family: 'Inter';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: #4C4C4C;
+    margin-bottom: 5px;
+}
+
+.input,
+.twinInputs,
+.thirdInputs {
+    width: 620px;
+    height: 58px;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #F8F8F8;
+
+    border: 0;
+    margin-bottom: 20px;
+
+    @include md-d {
+        width: 92vw;
+    }
+}
+
+.twinInputs {
+    width: 298px;
+
+    @include md-d {
+        width: 46vw;
+    }
+}
+
+.thirdInputs {
+    width: 196px;
+
+    @include md-d {
+        width: 30vw;
+    }
+}
+
+.changeDataBtn {
+    width: 180px;
+    height: 46px;
+    padding: 16px, 80px, 16px, 80px;
+    border-radius: 5px;
+
+    background-color: #F57520;
+    color: #fff;
+    border: 0;
+    cursor: pointer;
+
+
+    &:hover {
+        background-color: #D75702;
+    }
+}

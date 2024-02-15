@@ -14,6 +14,7 @@ import OrderPage from '../pages/OrderPage/OrderPage';
 import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import ProductPage from '../pages/ProductPage/ProductPage';
 import Storage from '../pages/Storage/Storage';
+import AccountPage from '../pages/AccountPage/AccountPage';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Main />}></Route>
           <Route path='/catalog' element={<Catalog />}></Route>
+          <Route path='/account' element={<AccountPage />}></Route>
           <Route path='/catalog/:id' element={<ProductPage />}></Route>
           <Route path='/bicycle-workshop' element={<BicycleWorkshop />}></Route>
           <Route path='/storage' element={<Storage />}></Route>
