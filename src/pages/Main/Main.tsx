@@ -1,3 +1,4 @@
+import QuickBuySnippet from "../../entities/QuickBuySnippet/QuickBuySnippet";
 import CompaniesSlider from "../../widgets/CompaniesSlider/CompaniesSlider";
 import ContactsMapDescription from "../../widgets/ContactMapDescription/ContactsMapDescription";
 import Footer from "../../widgets/Footer/Footer";
@@ -10,6 +11,9 @@ import MainHeroSection from "../../widgets/MainPage/MainHerosection/MainHeroSect
 import NewBikes from "../../widgets/MainPage/NewBikes/NewBikes";
 import YouUnstopable from "../../widgets/MainPage/YouUnstopable/YouUnstopable";
 import Newsletter from "../../widgets/Newsletter/Newsletter";
+
+import bicycle from '../../imgs/bike-img.png';
+import QuickOrderForm from "../../features/QuickOrderForm/QuickOrderForm";
 
 const Main = () => {
     return (
@@ -27,6 +31,12 @@ const Main = () => {
             <ContactsMapDescription />
             <Newsletter />
             <Footer />
+            <QuickBuySnippet 
+                img={bicycle} 
+                title="Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018"
+                opened={true} >
+                    <QuickOrderForm id={1} />            
+            </QuickBuySnippet>
         </div>
     );
 };

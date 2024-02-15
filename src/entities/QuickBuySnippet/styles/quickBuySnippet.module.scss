@@ -1,0 +1,88 @@
+@import '../../../Scss/global/global.scss';
+
+.blockBackroundShadow {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: #00000033;
+    
+    position: absolute;
+    z-index: 10;
+}
+
+.block {
+    width: 921px;
+    height: 575px;
+    padding: 56px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md-d {
+        width: 92vw;
+        height: auto;
+        padding: 20px;
+
+        flex-direction: column;
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.blockTtl {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 49px;
+    color: #101010;
+
+    margin-bottom: 15px;
+
+    @include md-d  {
+        font-size: 24px;
+        padding-top: 24px;
+    }
+}
+
+.img {
+    width: 340px;
+    height: 340px;
+    margin-bottom: 5px;
+
+    @include md-d {
+        width: 92%;
+        height: auto;
+    }
+}
+
+.productTtle {
+    max-width: 340px;
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+    text-align: center;
+
+    color: #101010;
+}
+
+.blockDisabled {
+    display: none;
+}
