@@ -1,0 +1,35 @@
+.block {
+    width: 206px;
+    height: 330px;
+    padding: 26px;
+    background-color: #101010;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+}
+
+.background {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+
+.listItem {
+    margin-bottom: 20px;
+}
+
+.link {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+
+    color: #fff;
+    &:hover {
+        color: #F57520;
+    }
+}
