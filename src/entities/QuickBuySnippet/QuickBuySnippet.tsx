@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import styles from './styles/quickBuySnippet.module.scss';
 import close from  '../../imgs/close.svg';
 import quickBuyProps from './types/quickBuyProps';

@@ -1,15 +1,8 @@
 import React from 'react';
 import styles from './styles/productCard.module.scss';
+import productCardType from './types/productCartProps';
 
-type ProductCardType = {
-    country: string,
-    soldOut: boolean,
-    image: string,
-    title: string,
-    cost: string,
-}
-
-const ProductCard = ({country, soldOut, image, title, cost}: ProductCardType) => {
+const ProductCard = ({country, soldOut, image, title, cost}: productCardType) => {
     return (
         <div className={styles.block}>
             <img className={styles.flag} src={country} alt="country" />
