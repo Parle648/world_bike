@@ -1,3 +1,4 @@
+import EmailPopUp from "../../entities/EmailPopUp/EmailPopUp";
 import CatalogHeroSection from "../../widgets/CatalogHeroSection/CatalogHeroSection";
 import CatalogMainSection from "../../widgets/CatalogMainSection/CatalogMainSection";
 import Footer from "../../widgets/Footer/Footer";
