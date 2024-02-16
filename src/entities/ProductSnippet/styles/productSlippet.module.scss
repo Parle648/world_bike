@@ -1,8 +1,24 @@
 .block {
     width: 100%;
     overflow: auto;
+    position: relative;
+    border-bottom: 1px solid #E5E5E5;
 
     scrollbar-color: #F57520 transparent;
+}
+
+.close {
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    cursor: pointer;
+
+    background-color: transparent;
+    border: 0;
+}
+
+.buyPage {
+    overflow: hidden;
 }
 
 .innerBlock {
@@ -15,10 +31,17 @@
     border-bottom: 1px solid #B3B3B3;
 }
 
+.buyPageInnerBlock {
+    width: auto;
+    max-width: 840px;
+    flex-wrap: wrap;
+}
+
 .img {
     width: 163px;
     height: 117px;
     object-fit: cover;
+    margin-bottom: 15px;
 }
 
 .ttl {
@@ -29,6 +52,12 @@
 
     color: #101010;
     max-width: 307px;
+}
+
+.costBlockContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .costBlock {
@@ -57,4 +86,23 @@
     color: #B3B3B3;
 
     text-decoration: line-through;
+}
+
+.productcounter {
+    width: 123px;
+    height: 52px;
+    padding: 24px;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-right: 15px;
+}
+
+.counterBtn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
 }

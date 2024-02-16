@@ -1,0 +1,35 @@
+.ttl {
+    font-family: "Inter";
+    font-size: 44px;
+    font-weight: 400;
+    line-height: 79px;
+
+    color: #101010;
+    margin-bottom: 24px;
+}
+
+.backToCatalog,
+.clearBusket {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: #F57520;
+}
+
+.clearBusket {
+    color: #B3B3B3;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.orderedProducts {
+    width: 940px;
+    position: relative;
+}
