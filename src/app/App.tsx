@@ -15,6 +15,7 @@ import PrivacyPolicy from '../pages/PrivacyPolicy/PrivacyPolicy';
 import ProductPage from '../pages/ProductPage/ProductPage';
 import Storage from '../pages/Storage/Storage';
 import AccountPage from '../pages/AccountPage/AccountPage';
+import BusketPage from '../pages/BusketPage/BusketPage';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
           <Route path='/about-us' element={<AboutUs />}></Route>
           <Route path='/contacts' element={<Contacts />}></Route>
           <Route path='/order' element={<OrderPage />}></Route>
+          <Route path='/busket' element={<BusketPage />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

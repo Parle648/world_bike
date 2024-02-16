@@ -51,10 +51,7 @@
     overflow: scroll;
 
     -webkit-overflow-scrolling: inherit;
-
-    &::-webkit-scrollbar {
-        width: 0;
-    }
+    scrollbar-color: transparent transparent;
 }
 
 .sliderLine {
