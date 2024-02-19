@@ -16,10 +16,12 @@ import ProductPage from '../pages/ProductPage/ProductPage';
 import Storage from '../pages/Storage/Storage';
 import AccountPage from '../pages/AccountPage/AccountPage';
 import BusketPage from '../pages/BusketPage/BusketPage';
+import ArrowTop from '../features/ArrowTop/ArrowTop';
 
 function App() {
   return (
     <div className="App">
+      <ArrowTop />
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Main />}></Route>
