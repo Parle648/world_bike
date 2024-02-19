@@ -1,13 +1,13 @@
-import OrderForm from "../../features/OrderForm/OrderForm";
 import Footer from "../../widgets/Footer/Footer";
 import Newsletter from "../../widgets/Newsletter/Newsletter";
+import OrderPageMain from "../../widgets/OrderPageMain/OrderPageMain";
 import TopHeader from "../../widgets/TopHeader/TopHeader";
 
 const OrderPage = () => {
     return (
         <>
             <TopHeader />
-            <OrderForm />
+            <OrderPageMain />
             <Newsletter />
             <Footer />
         </>
