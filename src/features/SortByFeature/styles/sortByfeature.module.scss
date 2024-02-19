@@ -6,6 +6,9 @@
     height: 60px;
     padding: 24px;
 
+    position: relative;
+    z-index: 3;
+
     border-radius: 10px;
     border: 1px solid #E5E5E5;
 
@@ -29,10 +32,52 @@
     }
 }
 
+.arrow {
+    transition: .35s;
+}
+
 .title {
     @include md-d {
         text-align: start;
         display: block;
         width: 180px;
     }
+}
+
+.list {
+    width: 290px;
+    height: auto;
+    margin-top: -15px;
+    padding: 24px;
+    border: 1px solid #E5E5E5;
+
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+
+    position: absolute;
+    z-index: 2;
+    background-color: #fff;
+}
+
+.listItem {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+
+    margin-bottom: 15px;
+
+    color: #777;
+
+    cursor: pointer;
+}
+
+.listOpened {
+    display: flex;
+}
+
+.arrowActive {
+    transform: rotate(180deg);
+    transition: .35s;
 }
