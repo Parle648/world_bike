@@ -1,5 +1,48 @@
+@import '../../../Scss/global/global.scss';
+
 .searchTrigger {
     background-color: transparent;
     border: 0;
     cursor: pointer;
+
+    position: relative;
+}
+
+.form {
+    width: 259px;
+    height: 44px;
+
+    position: absolute;
+    margin-top: 10px;
+    transform: translate(-85%, 0);
+
+    display: none;
+
+    @include md-d {
+        transform: translate(-35%, 0);
+    }
+}
+
+.input {
+    width: 100%;
+    height: 100%;
+    color: #777;
+    background-color: #101010;
+    border: 0px;
+    padding: 14px;
+
+    border: 1px solid #777;
+    border-radius: 5px;
+}
+
+.inputSearch {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+
+    opacity: 0.4;
+}
+
+.formActive {
+    display: block;
 }
