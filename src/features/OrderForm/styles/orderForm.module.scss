@@ -1,0 +1,272 @@
+@import '../../../Scss/global/global.scss';
+
+.form {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.firstStep {
+    width: 896px;
+    height: 543px;
+    padding: 40px;
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+    @include lg-d {
+        height: auto;
+    }
+
+    @include lg-d {
+        width: 100%;
+        padding: 24px;
+    } 
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @include lg-d {
+        flex-direction: column;
+    }
+}
+
+.firstStepTtl {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 49px;
+
+    color: #101010;
+
+    margin-bottom: 44px;
+
+    @include md-d {
+        font-size: 30px;
+    }
+}
+
+.name,
+.surname,
+.city,
+.street,
+.house,
+.appartment,
+.phone,
+.email,
+.textarea {
+    width: 400px;
+    height: 56px;
+    margin-bottom: 16px;
+
+    background-color: #F8F8F8;
+    color: #777;
+    font-size: 13px;
+    padding: 23px;
+    border: 0;
+    border-radius: 10px;
+
+    @include md-d {
+        width: 250px;
+    }
+}
+
+.city {
+    width: 220px;
+
+    @include lg-d {
+        width: 400px;
+    }
+
+    @include md-d {
+        width: 250px;
+    }
+}
+
+.house,
+.appartment {
+    width: 74px;
+
+    @include lg-d {
+        width: 400px;
+    }
+
+    @include md-d {
+        width: 250px;
+    }
+}
+
+.textarea {
+    width: 100%;
+    height: 160px;
+
+    @include lg-d {
+        width: 400px;
+    }
+
+    @include md-d {
+        width: 250px;
+    }
+}
+
+.secondStep {
+    width: 368px;
+    height: 543px;
+    padding: 48px;
+
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+    @include lg-d {
+        width: 100%;
+        padding: 24px;
+    } 
+}
+
+.stepBlockTtl {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+
+    color: #101010;
+    margin-bottom: 10px;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 16px;
+}
+
+.unvisibleRadio {
+    display: none;
+}
+
+.fakeRadio {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #777;
+    border-radius: 50%;
+    margin-right: 16px;
+}
+
+.unvisibleRadio:checked + .fakeRadio {
+    border: 9px solid #F57520;
+}
+
+//
+
+.thirdStep {
+    width: 100%;
+    padding: 48px;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include lg-d {
+        flex-direction: column;
+        padding: 24px;
+    }
+}
+
+.deliveryDataTtl {
+    margin-bottom: 16px;
+
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 38px;
+
+    color: #F57520;
+
+    @include md-d {
+        font-size: 16px;
+    } 
+}
+
+.DeliveryDataItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.submitBlockTtl {
+    font-family: "Inter";
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+
+    color: #101010;
+
+    margin-bottom: 24px;
+}
+
+.submit {
+    width: 346px;
+    height: 52px;
+    padding: 16px 80px;
+    border: 0;
+    border-radius: 10px;
+
+    background-color: #F57520;
+    color: #fff;
+    text-align: center;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    margin-bottom: 10px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: #D75702;
+    }
+
+    @include lg-d {
+        width: 250px;
+        padding: 16px;
+    }
+}
+
+.privacyPolice {
+    max-width: 346px;
+    font-family: "Inter";
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 19px;
+
+    color: #777;
+
+    @include lg-d {
+        width: 300px;
+    }
+
+    @include md-d {
+        width: 250px;
+    }
+}
+
+.privacyPolicyLink {
+    color: #F57520;
+
+    &:hover {
+        color: #D75702;
+    }
+}
