@@ -1,0 +1,68 @@
+.block {
+    width: 290px;
+    height: 378px;
+    padding: 32px 24px;
+    border-radius: 10px;
+    border: 1px solid #E5E5E5;
+}
+
+.field,
+.conclusionBlock {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 16px;
+}
+
+.ttl,
+.data {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+
+    color: #777;
+}
+
+.data {
+    color: #101010;
+}
+
+.conclusionBlock {
+    border-top: 1px solid #E5E5E5;
+}
+
+.conclusionTtl,
+.conclusionData {
+    font-family: "Inter";
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 38px;
+    color: #101010;
+
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.orderLink {
+    display: block;
+    text-align: center;
+    width: 242px;
+    height: 52px;
+    padding: 16px;
+    border-radius: 10px;
+   
+    color: #fff;
+    background-color: #F57520;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+
+    &:hover {
+        background-color: #D75702;
+    }
+}
