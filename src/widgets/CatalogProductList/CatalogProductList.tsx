@@ -2,14 +2,16 @@ import React from 'react';
 import styles from './styles/catalogList.module.scss';
 import ProductListCard from '../../entities/ProductListCart/ProductListCart';
 import flag from '../../imgs/italy-flag.png';
-import bike from '../../imgs/bike-img.png';
 import SortByFeature from '../../features/SortByFeature/SortByFeature';
 import filter from '../../imgs/filter.svg';
 import ListPagesFeature from '../../features/ProductListPages/ListPagesFeature';
+import ProductListSceletonLoader from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
+import ImageGrid from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
 
 const CatalogProductList = () => {
     const [opened, setOpened] = React.useState(true);
 
+    const [products, setProducts] = React.useState([]);
 
     return (
         <div className={styles.block}>
@@ -39,17 +41,26 @@ const CatalogProductList = () => {
                 </button>
             </div>
             <div className={styles.list}>
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={false} image={bike} title='Trek Verve 2 Disc Lithium Grey HYBD 2022' cost='45 000' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={false} image={bike} title='Trek Verve 2 Disc Lithium Grey HYBD 2022' cost='45 000' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={false} image={bike} title='Trek Verve 2 Disc Lithium Grey HYBD 2022' cost='45 000' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={false} image={bike} title='Trek Verve 2 Disc Lithium Grey HYBD 2022' cost='45 000' />
-                <ProductListCard opened={opened} setOpened={setOpened} country={flag} soldOut={true} image={bike} title='Bianchi AQUILA L DURA ACE DI2 TEAM JUMBO 2021' cost='342 840' />
+                {products.length === 0 && 
+                <ImageGrid />
+                }
+                {products ? products.map((product: any) => {
+                    return (
+                        <ProductListCard 
+                        key={product.id} 
+                        opened={opened} 
+                        setOpened={setOpened} 
+                        country={flag} 
+                        soldOut={product.in_stock} 
+                        image={product.background_img} 
+                        title={product.title} 
+                        cost={product.cost} />
+                    );
+                    }) : 
+                    null
+                }
             </div>
-            <ListPagesFeature />
+            <ListPagesFeature setProducts={setProducts} />
         </div>
     );
 };
