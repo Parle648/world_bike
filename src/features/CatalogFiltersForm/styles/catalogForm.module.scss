@@ -34,8 +34,13 @@
     width: 41px;
     height: 21px;
     border-radius: 10px;
+    padding: 3px;
     background: #F57520;
     position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
 
     &::before {
         content: '';
@@ -45,8 +50,6 @@
         border-radius: 50%;
         
         position: absolute;
-        top: 3px;
-        left: 3px;
 
         transition: .35s;
     }
@@ -116,6 +119,7 @@
     align-items: center;
 
     margin-bottom: 24px;
+    position: relative;
 }
 
 .costMin,
@@ -129,6 +133,10 @@
 }
 
 .rangeBlock {
+    position: absolute;
+    z-index: 2;
+    margin: auto 6%;
+    height: 100%;
     background-color: #101010;
 }
 
@@ -185,4 +193,45 @@
         background-color: #E5E5E5;
         cursor: pointer;
     }
+}
+
+.radioActive {
+    background-color: #F57520;
+}
+
+.hasActive {
+    justify-content: flex-end;
+}
+
+.range {
+   position: absolute;
+   height: 5px;
+   width: 100%;
+   background: none;
+   -webkit-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border: 7px solid #101010;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    -webkit-appearance: none;
+    position: relative;
+    z-index: 4;
+}
+input[type="range"]::-moz-range-thumb {
+    width: 8px;
+    height: 8px;
+    background-color: #fff;
+    border: 7px solid #101010;
+    border-radius: 50%;
+    cursor: pointer;
+    background: none;
+    -moz-appearance: none;
+    position: relative;
+    z-index: 4;
 }
