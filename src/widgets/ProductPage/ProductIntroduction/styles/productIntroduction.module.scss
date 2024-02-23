@@ -1,0 +1,226 @@
+@import '../../../../Scss/global/global.scss';
+
+.block {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    @include lg-d {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+.img {
+    max-width: 623px;
+
+    @include md-d {
+        width: 92vw;
+    }
+}
+
+.description {
+    width: 510px;
+
+    @include md-d {
+        width: 92vw;
+    }
+}
+
+.descriptionTtl {
+    font-family: "Inter";
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 49px;
+
+    color: #101010;
+
+    margin-bottom: 16px;
+}
+
+.brand,
+.articul,
+.has {
+    font-family: "Inter";
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 22px;
+
+    color: #B3B3B3;
+
+    margin-bottom: 15px;
+}
+
+.has {
+    color: #4D932C;
+}
+
+.costBlock {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 24px;
+
+    @include md-d {
+        width: 80%;
+    }
+}
+
+.cost {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 64px;
+
+    color: #101010;
+
+    @include md-d {
+        font-size: 28px;
+    }
+}
+
+.costThrougthLine {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+
+    text-decoration: line-through;
+
+    color: #B3B3B3;
+
+    @include md-d {
+        font-size: 16px;
+    }
+}
+
+.descriptionParagraph {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: #4C4C4C;
+
+    margin-bottom: 20px;
+}
+
+.sizesTtl {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+
+    color: #101010;
+
+    margin-bottom: 16px;
+}
+
+.sizes {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 36px;
+
+    @include md-d {
+        width: 100%;
+    }
+}
+
+.size {
+    width: 56px;
+    height: 49px;
+    color: #101010;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        cursor: pointer;
+    }
+}
+
+.actions {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @include md-d {
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+.counter {
+    width: 123px;
+    height: 52px;
+    margin-bottom: 15px;
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #B3B3B3;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.counterBtn {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.addToBusket {
+    width: 180px;
+    height: 52px;
+    padding: 16px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #F57520;
+    color: #fff;
+    text-align: center;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+
+    margin-bottom: 15px;
+
+    &:hover {
+        background-color: #D75702;
+        cursor: pointer;
+    }
+}
+
+.addToPrefer {
+    width: 56px;
+    height: 49px;
+    color: #101010;
+    background-color: #E5E5E5;
+    border: 0;
+    border-radius: 10px;
+    cursor: pointer;
+
+    color: rgb(255, 165, 180);
+    font-size: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 15px;
+
+    &:hover {
+        background-color: #B3B3B3;
+    }
+}
