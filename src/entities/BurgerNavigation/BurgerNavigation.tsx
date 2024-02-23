@@ -99,28 +99,28 @@ const BurgerNavigation = () => {
                     <nav>
                         <ul>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>О нас</Link>
+                                <Link className={styles.link} to='/about-us'>О нас</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Веломастерская</Link>
+                                <Link className={styles.link} to='/bicycle-workshop'>Веломастерская</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Хранение</Link>
+                                <Link className={styles.link} to='/storage'>Хранение</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Гарантии</Link>
+                                <Link className={styles.link} to='/guarantee'>Гарантии</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Пользовательское соглашение</Link>
+                                <Link className={styles.link} to='/privacy-policy'>Пользовательское соглашение</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Доставка и оплата</Link>
+                                <Link className={styles.link} to='/delivery'>Доставка и оплата</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Блог</Link>
+                                <Link className={styles.link} to='/blog'>Блог</Link>
                             </li>
                             <li className={styles.listItem}>
-                                <Link className={styles.link} to='./'>Контакты</Link>
+                                <Link className={styles.link} to='/contacts'>Контакты</Link>
                             </li>
                         </ul>
                     </nav>

@@ -9,25 +9,25 @@ const Accessouires = () => {
             <img className={styles.background} src={accessouires} alt="accessouires" />
             <ul>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велокомпьютеры</Link>
+                    <Link className={styles.link} to='/catalog'>Велокомпьютеры</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Инструменты</Link>
+                    <Link className={styles.link} to='/catalog'>Инструменты</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Вилки</Link>
+                    <Link className={styles.link} to='/catalog'>Вилки</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велочехлы</Link>
+                    <Link className={styles.link} to='/catalog'>Велочехлы</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Крылья</Link>
+                    <Link className={styles.link} to='/catalog'>Крылья</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Насосы</Link>
+                    <Link className={styles.link} to='/catalog'>Насосы</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Фляги, держатели</Link>
+                    <Link className={styles.link} to='/catalog'>Фляги, держатели</Link>
                 </li>
             </ul>
         </div>

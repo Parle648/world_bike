@@ -10,30 +10,30 @@ const Equipment = () => {
 
             <ul>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велокуртки</Link>
+                    <Link className={styles.link} to='/catalog'>Велокуртки</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велошлемы</Link>
+                    <Link className={styles.link} to='/catalog'>Велошлемы</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велотрусы</Link>
+                    <Link className={styles.link} to='/catalog'>Велотрусы</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велоперчатки</Link>
+                    <Link className={styles.link} to='/catalog'>Велоперчатки</Link>
                 </li>
             </ul>
             <ul>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Термобелье</Link>
+                    <Link className={styles.link} to='/catalog'>Термобелье</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Очки</Link>
+                    <Link className={styles.link} to='/catalog'>Очки</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Велообувь</Link>
+                    <Link className={styles.link} to='/catalog'>Велообувь</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Аксессуары</Link>
+                    <Link className={styles.link} to='/catalog'>Аксессуары</Link>
                 </li>
             </ul>
         </div>

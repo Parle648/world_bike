@@ -8,54 +8,54 @@ const SpareParts = () => {
         <div className={styles.block}>
             <ul>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Группы оборудования</Link>
+                    <Link className={styles.link} to='/catalog'>Группы оборудования</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Манетки/Шифтеры</Link>
+                    <Link className={styles.link} to='/catalog'>Манетки/Шифтеры</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Рамы</Link>
+                    <Link className={styles.link} to='/catalog'>Рамы</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Педали</Link>
+                    <Link className={styles.link} to='/catalog'>Педали</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Вилки</Link>
+                    <Link className={styles.link} to='/catalog'>Вилки</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Переключатели скоростей</Link>
+                    <Link className={styles.link} to='/catalog'>Переключатели скоростей</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Запчасти для электронных групп</Link>
+                    <Link className={styles.link} to='/catalog'>Запчасти для электронных групп</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Покрышки</Link>
+                    <Link className={styles.link} to='/catalog'>Покрышки</Link>
                 </li>
             </ul>
             <ul>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Сёдла и штыри</Link>
+                    <Link className={styles.link} to='/catalog'>Сёдла и штыри</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Каретки</Link>
+                    <Link className={styles.link} to='/catalog'>Каретки</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Системы шатунов</Link>
+                    <Link className={styles.link} to='/catalog'>Системы шатунов</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Камеры</Link>
+                    <Link className={styles.link} to='/catalog'>Камеры</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Тормоза</Link>
+                    <Link className={styles.link} to='/catalog'>Тормоза</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Кассеты</Link>
+                    <Link className={styles.link} to='/catalog'>Кассеты</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Цепи</Link>
+                    <Link className={styles.link} to='/catalog'>Цепи</Link>
                 </li>
                 <li className={styles.listItem}>
-                    <Link className={styles.link} to='./'>Колёса</Link>
+                    <Link className={styles.link} to='/catalog'>Колёса</Link>
                 </li>
             </ul>
             <img className={styles.background} src={tires} alt="tires" />

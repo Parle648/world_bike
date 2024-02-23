@@ -9,7 +9,7 @@ const BicycleMachines = () => {
             <img className={styles.background} src={bicycleMachines} alt="bicycleMachines" />
 
             <ul>
-                <li className={styles.listItem}><Link className={styles.link} to='./'>Аксессуары для велостанков</Link></li>
+                <li className={styles.listItem}><Link className={styles.link} to='/catalog'>Аксессуары для велостанков</Link></li>
             </ul>
         </div>
     );

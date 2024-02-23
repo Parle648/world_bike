@@ -18,24 +18,24 @@ const Footer = () => {
             <div className={styles.additionalLists}>
                 <h3 className={styles.listTtl}>Каталог</h3>
                 <ul>
-                    <li><Link className={styles.listLink} to='#!'>Trade-in</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Велосипеды</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Экипировка</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Запчасти</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Велостанки</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Аксессуары</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Trade-in</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Велосипеды</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Экипировка</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Запчасти</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Велостанки</Link></li>
+                    <li><Link className={styles.listLink} to='/catalog'>Аксессуары</Link></li>
                 </ul>
             </div>
             <div className={styles.additionalLists}>
                 <h3 className={styles.listTtl}>Для клиента</h3>
                 <ul>
-                    <li><Link className={styles.listLink} to='#!'>О нас</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Доставка и оплата</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Блог</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Контакты</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Веломастерская</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Хранение</Link></li>
-                    <li><Link className={styles.listLink} to='#!'>Гарантии</Link></li>
+                    <li><Link className={styles.listLink} to='/about-us'>О нас</Link></li>
+                    <li><Link className={styles.listLink} to='/delivery'>Доставка и оплата</Link></li>
+                    <li><Link className={styles.listLink} to='/blog'>Блог</Link></li>
+                    <li><Link className={styles.listLink} to='/contacts'>Контакты</Link></li>
+                    <li><Link className={styles.listLink} to='/bicycle-workshop'>Веломастерская</Link></li>
+                    <li><Link className={styles.listLink} to='/storage'>Хранение</Link></li>
+                    <li><Link className={styles.listLink} to='/guarantee'>Гарантии</Link></li>
                 </ul>
             </div>
             <div>

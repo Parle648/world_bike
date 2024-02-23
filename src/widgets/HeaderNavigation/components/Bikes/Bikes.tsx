@@ -8,36 +8,36 @@ const Bikes = () => {
         <div className={stylse.block}>
             <ul>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Горные велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Горные велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Велосипеды для триатлона</Link>
+                    <Link className={stylse.link} to='/catalog'>Велосипеды для триатлона</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Городские велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Городские велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Двухподвесные велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Двухподвесные велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Шоссейные велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Шоссейные велосипеды</Link>
                 </li>
             </ul>
             <ul>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Электровелосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Электровелосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Гравийные велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Гравийные велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Женские велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Женские велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Трековые велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Трековые велосипеды</Link>
                 </li>
                 <li className={stylse.listItem}>
-                    <Link className={stylse.link} to='./'>Детские велосипеды</Link>
+                    <Link className={stylse.link} to='/catalog'>Детские велосипеды</Link>
                 </li>
             </ul>
             <img className={stylse.background} src={byke} alt="byke" />

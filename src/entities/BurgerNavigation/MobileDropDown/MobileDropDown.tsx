@@ -19,7 +19,7 @@ const MobileDropDown = ({title, links}: mobileDropDownProps) => {
                     {links && links.map(link => {
                         return (
                             <li className={styles.listItem} key={link}>
-                                <Link className={styles.link} to='./'>{link}</Link>
+                                <Link className={styles.link} to='/catalog'>{link}</Link>
                             </li>
                         )
                     })}

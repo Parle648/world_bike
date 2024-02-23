@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Accessouires from './components/Accessouires/Accessouires';
 import BicycleMachines from './components/BicycleMachines/BicycleMachines';
 import Bikes from './components/Bikes/Bikes';
@@ -10,34 +11,34 @@ const HeaderNavigation = () => {
         <nav className={styles.navigation}>
             <ul className={styles.navigationList}>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Trade In</a>
+                    <Link className={styles.navigationLink} to="/catalog">Trade In</Link>
                 </li>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Велосипеды</a>
+                    <Link className={styles.navigationLink} to="/catalog">Велосипеды</Link>
                     <div className={styles.navigationDetails}>
                         <Bikes />
                     </div>
                 </li>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Запчасти</a>
+                    <Link className={styles.navigationLink} to="/catalog">Запчасти</Link>
                     <div className={styles.navigationDetails}>
                         <SpareParts />
                     </div>
                 </li>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Экипировка</a>
+                    <Link className={styles.navigationLink} to="/catalog">Экипировка</Link>
                     <div className={styles.navigationDetails}>
                         <Equipment />
                     </div>
                 </li>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Аксессуары</a>
+                    <Link className={styles.navigationLink} to="/catalog">Аксессуары</Link>
                     <div className={styles.navigationDetails}>
                         <Accessouires />
                     </div>
                 </li>
                 <li className={styles.navigationListItem}>
-                    <a className={styles.navigationLink} href="#!">Велостанки</a>
+                    <Link className={styles.navigationLink} to="/catalog">Велостанки</Link>
                     <div className={styles.navigationDetails}>
                         <BicycleMachines />
                     </div>
