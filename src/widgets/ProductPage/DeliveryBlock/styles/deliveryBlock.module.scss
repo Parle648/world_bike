@@ -1,0 +1,87 @@
+@import '../../../../Scss/global/global.scss';
+
+.ttl,
+.deliveryTypeTtl {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 49px;
+
+    color: #101010;
+    margin-bottom: 64px;
+
+    @include md-d {
+        margin-bottom: 24px;
+        font-size: 30px;
+    }
+}
+
+.img {
+    margin-bottom: 24px;
+    max-width: 100%;
+}
+
+.deliveryTypeTtl {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 32px;
+    margin-bottom: 24px;
+    
+    @include md-d {
+        font-size: 17px;
+    }
+}
+
+.deliveryTypes {
+    list-style-type: disc !important;
+    margin-bottom: 24px;
+}
+
+.deliveryType {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    margin-bottom: 15px;
+    color: #34312D;
+}
+
+.note {
+    background-color: #E5E5E5;
+
+    max-width: 684px;
+    height: auto;
+    padding: 10px 16px;
+
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 26px;
+
+    color: #000;
+    border-radius: 10px;
+
+    margin-bottom: 24px;
+}
+
+.additionalInfo {
+    font-family: "Inter";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+
+    color: #34312D;
+
+    margin-bottom: 16px;
+}
+
+.attention {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+
+    color: #101010;
+    padding-top: 15px;
+}
