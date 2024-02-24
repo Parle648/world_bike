@@ -1,0 +1,29 @@
+.block {
+    margin-bottom: 24px;
+}
+
+.ttl {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 49px;
+
+    color: #101010;
+    margin-bottom: 24px;
+}
+
+.listItem,
+.whiteListItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 106px;
+    padding: 24px;
+
+    background-color: #F8F8F8;
+}
+
+.whiteListItem {
+    background-color: #fff;
+}
