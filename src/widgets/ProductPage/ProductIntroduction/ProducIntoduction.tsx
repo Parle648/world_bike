@@ -2,8 +2,17 @@ import React from 'react';
 import styles from './styles/productIntroduction.module.scss';
 
 import bicycle from '../../../imgs/product-page-img.png';
+import getProductInform from './api/getProductInform';
+import productInformProps from './types/productInformProps';
 
 const ProducIntoduction = () => {
+    const [productInfrom, setProductInform] = React.useState<productInformProps>();
+    const productId = +window.location.href.split('/')[4].slice(1)
+
+    React.useEffect(() => {
+        getProductInform(productId).then((data: any) => setProductInform(data[0]));
+    }, [])
+    
     return (
         <div className="wrapper">
             <div className={styles.block}>
@@ -11,22 +20,22 @@ const ProducIntoduction = () => {
                     <img className={styles.img} src={bicycle} alt="" />
                 </div>
                 <div className={styles.description}>
-                    <h2 className={styles.descriptionTtl}>Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018</h2>
+                    <h2 className={styles.descriptionTtl}>{productInfrom ? productInfrom.title : 'title is not defined'}</h2>
                 
                     <p className={styles.brand}>
-                    Scott
+                        {productInfrom && productInfrom.title}
                     </p>
 
                     <p className={styles.articul}>
-                        123213213
+                        {productInfrom && productInfrom.articul}
                     </p>
 
-                    <p className={styles.has}>
-                        В наличии
+                    <p className={productInfrom?.in_stock ? styles.has : styles.hasnt}>
+                        {productInfrom?.in_stock ? 'В наличии' : 'Не в наличии'}
                     </p>
 
                     <div className={styles.costBlock}>
-                        <span className={styles.cost}>435 000 ₽</span>
+                        <span className={styles.cost}>{productInfrom && productInfrom.cost}</span>
                         <span className={styles.costThrougthLine}>522 000 ₽</span>
                     </div>
 
@@ -56,6 +65,7 @@ const ProducIntoduction = () => {
                             XL
                         </li>
                     </ul>
+                    
 
                     <div className={styles.actions}>
                         <div className={styles.counter}>
@@ -71,6 +81,8 @@ const ProducIntoduction = () => {
 
                 </div>
             </div>
+            <h2 className={styles.descriptionTtl}>Описание</h2>
+            <p className={styles.descriptionParagraph}>{productInfrom?.description}</p>
         </div>
     );
 };
