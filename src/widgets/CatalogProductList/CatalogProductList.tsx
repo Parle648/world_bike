@@ -12,7 +12,6 @@ const CatalogProductList = () => {
     const [opened, setOpened] = React.useState(true);
 
     const [products, setProducts] = React.useState([]);
-    const [loc, setLoc] = React.useState(localStorage)
 
     React.useEffect(() => {
         const handler = () => {

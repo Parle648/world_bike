@@ -13,6 +13,7 @@ import treckFx from '../../imgs/treck-fx.png';
 import treckMarlin from '../../imgs/treck-marlin.png'; 
 import treckMarlinLumen from '../../imgs/treck-marlin-lumen.png'; 
 import orbeaBlack from '../../imgs/orbea-black.png';
+import React from 'react';
 
 interface ProductCardType {
     country: string,
@@ -36,11 +37,13 @@ const bykes: {[key: string]: string} = {
     "orbea-black.png": orbeaBlack
 }
 
-const ProductListCard = ({country, soldOut, image, opened, setOpened, title, cost}: ProductCardType) => {
+const ProductListCard = ({country, soldOut, image, title, cost}: ProductCardType) => {
 
     function openOrderBlock() {
         setOpened(!opened);
     };
+
+    const [opened, setOpened] = React.useState(true);
 
     return (
         <div className={styles.block}>
@@ -54,8 +57,8 @@ const ProductListCard = ({country, soldOut, image, opened, setOpened, title, cos
 
             <button className={styles.seeMore} onClick={openOrderBlock}>В 1 клик</button>
             <QuickBuySnippet 
-                img={bicycle} 
-                title="Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018"
+                img={image} 
+                title={title}
                 opened={opened}
                 setOpened={setOpened} >
                     <QuickOrderForm id={1} />            
