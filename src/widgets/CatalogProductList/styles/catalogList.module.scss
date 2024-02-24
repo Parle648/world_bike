@@ -110,3 +110,18 @@
         justify-content: center;
     }
 }
+
+.mobileFilters {
+    display: none;
+}
+
+.disbled {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    z-index: 3;
+    padding: 10px;
+    margin-left: -5px;
+
+    top: 0;
+}

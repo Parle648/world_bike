@@ -19,8 +19,6 @@ interface ProductCardType {
     country: string,
     soldOut: boolean,
     image: string,
-    opened: boolean,
-    setOpened: Dispatch<SetStateAction<boolean>>,
     title: string,
     cost: string,
 }
