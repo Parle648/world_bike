@@ -4,7 +4,7 @@ import styles from './styles/busket.module.scss';
 const Busket = () => {
     return (
         <div>
-            <a href='/basket' className={styles.busketOpen}>
+            <a href='/busket' className={styles.busketOpen}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M17 17H6.5L4.5 3H2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.78564 5H20.9999L17.9999 14H6.07135" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>

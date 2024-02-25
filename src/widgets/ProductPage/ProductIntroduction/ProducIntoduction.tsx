@@ -30,8 +30,8 @@ const ProducIntoduction = () => {
                         {productInfrom && productInfrom.articul}
                     </p>
 
-                    <p className={productInfrom?.in_stock ? styles.has : styles.hasnt}>
-                        {productInfrom?.in_stock ? 'В наличии' : 'Не в наличии'}
+                    <p className={!productInfrom?.in_stock ? styles.has : styles.hasnt}>
+                        {!productInfrom?.in_stock ? 'В наличии' : 'Не в наличии'}
                     </p>
 
                     <div className={styles.costBlock}>

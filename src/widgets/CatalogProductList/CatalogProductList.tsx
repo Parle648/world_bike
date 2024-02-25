@@ -60,6 +60,7 @@ const CatalogProductList = ({products, setProducts}: {products: any, setProducts
                     return (
                         <ProductListCard 
                         key={product.id} 
+                        id={product.id} 
                         country={flag} 
                         soldOut={product.in_stock} 
                         image={product.background_img} 

@@ -14,8 +14,10 @@ import treckMarlin from '../../imgs/treck-marlin.png';
 import treckMarlinLumen from '../../imgs/treck-marlin-lumen.png'; 
 import orbeaBlack from '../../imgs/orbea-black.png';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface ProductCardType {
+    id: number,
     country: string,
     soldOut: boolean,
     image: string,
@@ -35,9 +37,10 @@ const bykes: {[key: string]: string} = {
     "orbea-black.png": orbeaBlack
 }
 
-const ProductListCard = ({country, soldOut, image, title, cost}: ProductCardType) => {
+const ProductListCard = ({country, soldOut, image, title, cost, id}: ProductCardType) => {
 
-    function openOrderBlock() {
+    function openOrderBlock(event: any) {
+        event.stopPropagation()
         setOpened(!opened);
     };
 
@@ -45,15 +48,17 @@ const ProductListCard = ({country, soldOut, image, title, cost}: ProductCardType
 
     return (
         <div className={styles.block}>
-            <img className={styles.flag} src={country} alt="country" />
-            <span className={soldOut ? styles.soldOut : styles.hasAtShop}>{soldOut ? 'Распродано' : 'В наличии'}</span>
+            <Link to={`./:${id}`}>
+                <img className={styles.flag} src={country} alt="country" />
+                <span className={soldOut ? styles.soldOut : styles.hasAtShop}>{soldOut ? 'Распродано' : 'В наличии'}</span>
+    
+                <img className={styles.img} src={bykes[image]} alt="image" />
+    
+                <h3 className={styles.ttl}>{title}</h3>
+                <h4 className={styles.cost}>{cost}</h4>
+            </Link>
 
-            <img className={styles.img} src={bykes[image]} alt="image" />
-
-            <h3 className={styles.ttl}>{title}</h3>
-            <h4 className={styles.cost}>{cost}</h4>
-
-            <button className={styles.seeMore} onClick={openOrderBlock}>В 1 клик</button>
+            <button className={styles.seeMore} onClick={(event: any) => {event.stopPropagation(); setOpened(!opened)}}>В 1 клик</button>
             <QuickBuySnippet 
                 img={image} 
                 title={title}
