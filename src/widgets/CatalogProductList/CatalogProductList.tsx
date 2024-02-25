@@ -9,22 +9,17 @@ import ProductListSceletonLoader from '../../entities/ProductListSceletopLoader/
 import ImageGrid from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
 import CatalogFiltersForm from '../../features/CatalogFiltersForm/CatalogFiltersForm';
 import close from '../../imgs/close.svg';
+import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 
-const CatalogProductList = () => {
-    const [products, setProducts] = React.useState([]);
+const CatalogProductList = ({products, setProducts}: {products: any, setProducts:any}) => {
     const [filtersOpened, setFiltersOpened] = React.useState<boolean>(false);
 
     function openFilters() {
         setFiltersOpened(!filtersOpened);
     };
 
-    React.useEffect(() => {
-        const handler = () => {
-            setProducts(JSON.parse(localStorage.products.data))
-        }
-		window.addEventListener('storage', handler)
-        return () => window.removeEventListener('storage', handler)
-	}, [])
+    console.log(products);
+    
 
     return (
         <div className={styles.block}>
@@ -54,24 +49,13 @@ const CatalogProductList = () => {
                 </button>
                 <div className={`${styles.mobileFilters} ${filtersOpened && styles.disbled}`}>
                     <button className={styles.filtersOpen} onClick={openFilters}><img src={close} alt="" /></button>
-                    <CatalogFiltersForm />
+                    <CatalogFiltersForm products={products} setProducts={setProducts} />
                 </div>
             </div>
             <div className={styles.list}>
                 {products.length === 0 && 
                 <ImageGrid />
                 }
-                {localStorage.products.data && JSON.parse(localStorage.products.data).map((product: any) => {
-                    return (
-                        <ProductListCard 
-                        key={product.id} 
-                        country={flag} 
-                        soldOut={product.in_stock} 
-                        image={product.background_img} 
-                        title={product.title} 
-                        cost={product.cost} />
-                    );
-                })}
                 {products ? products.map((product: any) => {
                     return (
                         <ProductListCard 
@@ -84,7 +68,7 @@ const CatalogProductList = () => {
                     );
                     }) : 
                     null
-                }
+                } 
             </div>
             <ListPagesFeature setProducts={setProducts} />
         </div>

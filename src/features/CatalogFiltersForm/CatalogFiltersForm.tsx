@@ -5,7 +5,7 @@ import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 import arrow from '../../imgs/filters-arrow.svg';
 import getProductsByProps from './api/getProductsByProps';
 
-const CatalogFiltersForm = () => {
+const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts:any}) => {
     const {
         register,
         handleSubmit,
@@ -23,13 +23,13 @@ const CatalogFiltersForm = () => {
 
     const [storage, setLocalStorage] = useLocalStorage({
         'has': false, 
-        "categories": [], 
+        "categories": [''], 
         "cost": {
             'from': 0, 
             'to': 1200000
         }, 
-        "brands": [], 
-        "frame_materials": [] }, 'filters');
+        "brands": [''], 
+        "frame_materials": [''] }, 'filters');
 
     React.useEffect(() => {
         setLocalStorage({
@@ -43,7 +43,8 @@ const CatalogFiltersForm = () => {
             "frame_materials": [] })
     }, [])
     
-    const [products, setProducts] = useLocalStorage({}, 'products')
+    const [loaderUnvisible, setLoaderUnvisible] = React.useState(true)
+    const unvisible = React.useRef(true)
 
     function getByFilters(event: any): void {
         const newStorage: {[key: string]: any} = {
@@ -65,9 +66,10 @@ const CatalogFiltersForm = () => {
             newStorage[event.target.dataset.filter].push(event.target.dataset.name) : 
             newStorage[event.target.dataset.filter] = newStorage[event.target.dataset.filter].filter((type: string) => type !== event.target.dataset.name);
         }
+        setLoaderUnvisible(unvisible.current = false)
      
         setLocalStorage(newStorage);
-        getProductsByProps(`filters=${JSON.stringify(newStorage)}`).then((data: any) => setProducts(data))
+        getProductsByProps(`filters=${JSON.stringify(newStorage)}`).then((data: any) => {setProducts(JSON.parse(data.data)); setLoaderUnvisible(unvisible.current = true)})
     }
 
     // const [margins, setMargins] = React.useState([0, 0.25])
@@ -86,6 +88,9 @@ const CatalogFiltersForm = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(onSubmit)}> 
+            <div className={`${styles.loaderContainer} ${loaderUnvisible && styles.diabled}`}>
+                <span className={styles.loader}></span>
+            </div>
             <label className={styles.hasOnlyLabel}>
                 <h2 className={styles.formTtl}>Только в наличии</h2>
                 <input className={`${styles.hasOnly} ${storage.has && styles.hasActive}`} checked={storage.has} data-filter='has' type="checkbox" {...register("hasOnly")} id="hasOnly" onChange={getByFilters}/>
@@ -199,29 +204,29 @@ const CatalogFiltersForm = () => {
                 <h2 className={styles.formTtl}>Бренд <img className={styles.arrow} src={arrow} alt="arrow" /></h2>
 
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='Bianci' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='look' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
-                    <h2 className={styles.formCheckboxTtl}>Bianci</h2>
+                    <h2 className={styles.formCheckboxTtl}>Look</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='BMC' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='trek' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
-                    <h2 className={styles.formCheckboxTtl}>BMC</h2>
+                    <h2 className={styles.formCheckboxTtl}>Trek</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='Ciclistino' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='orbea' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
-                    <h2 className={styles.formCheckboxTtl}>Ciclistino</h2>
+                    <h2 className={styles.formCheckboxTtl}>Orbea</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='Cipollini' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='scott' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
-                    <h2 className={styles.formCheckboxTtl}>Cipollini</h2>
+                    <h2 className={styles.formCheckboxTtl}>Scott</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='Colnago' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='black' data-filter='brands' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
-                    <h2 className={styles.formCheckboxTtl}>Colnago</h2>
+                    <h2 className={styles.formCheckboxTtl}>Black</h2>
                 </label>
             </div>
 
@@ -229,19 +234,24 @@ const CatalogFiltersForm = () => {
                 <h2 className={styles.formTtl}>Материал рамы <img className={styles.arrow} src={arrow} alt="arrow" /></h2>
 
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='lumuni' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='Aluminum' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Алюминий</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='carbon' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='Carbon Fiber' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Карбон</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
-                    <input className={styles.input} type="checkbox" data-name='steel' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <input className={styles.input} type="checkbox" data-name='Steel' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Сталь</h2>
+                </label>
+                <label className={styles.checkboxLabel}>
+                    <input className={styles.input} type="checkbox" data-name='Titanium' data-filter='frame_materials' {...register('checkbox', {onChange: getByFilters})} id="" />
+                    <div className={styles.fakeSquareCheckbox}>✓</div>
+                    <h2 className={styles.formCheckboxTtl}>Титан</h2>
                 </label>
             </div>
 
