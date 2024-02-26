@@ -1,10 +1,38 @@
 import React from 'react';
 import styles from './styles/orderForm.module.scss';
 import { Link } from 'react-router-dom';
+import close from '../../imgs/close.svg';
+import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 
 const OrderForm = () => {
+    function sendOrder(event: any) {
+        event?.preventDefault();
+        setOpened(!opened)
+    }
+
+    const [opened, setOpened] = React.useState(false);
+    const [orderedProducts, setOrderedProducts] = useLocalStorage([], 'orderedProducts')
+
+    function closeBlock() {
+        setOrderedProducts([]);
+        window.location.href = 'http://localhost:3000/catalog';
+        setOpened(!opened);
+    }
+
     return (
-        <form className={styles.form}>
+        <form className={styles.form} onSubmit={sendOrder}>
+            <div className={`${styles.backgroundColor} ${opened && styles.disabled}`}>
+                <div className={styles.block}>
+                    <button className={styles.close} onClick={closeBlock}><img src={close} alt="close" /></button>
+                    <h2 className={styles.popUpTtl}>Ваш заказ подтверждён</h2>
+                    <p className={styles.popUpParagraph}>
+                        Lorem ipsum dolor sit amet consectetur. Congue malesuada quisque purus 
+                        faucibus est adipiscing aliquam malesuada. Turpis ultricies diam at 
+                        facilisis varius nunc lectus scelerisque enim. Nisl pulvinar adipiscing 
+                        turpis ultricies posuere nibh faucibus. 
+                    </p>
+                </div>
+            </div>
             <fieldset className={styles.firstStep}>
 
                 <h2 className={styles.firstStepTtl}>1 Детали оплаты</h2>

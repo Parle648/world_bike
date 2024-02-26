@@ -4,10 +4,27 @@ import styles from './styles/productIntroduction.module.scss';
 import bicycle from '../../../imgs/product-page-img.png';
 import getProductInform from './api/getProductInform';
 import productInformProps from './types/productInformProps';
+import { useLocalStorage } from '../../../shared/hooks/useLocalStorage';
 
 const ProducIntoduction = () => {
     const [productInfrom, setProductInform] = React.useState<productInformProps>();
     const productId = +window.location.href.split('/')[4].slice(1)
+    
+    const [productCount, setProductCount] = React.useState(1);
+
+    function choseCount(event: React.MouseEvent<HTMLButtonElement>) {
+        if (event.currentTarget.dataset.type === 'increment') {
+            setProductCount(prev => prev += 1)
+        } else if (productCount !== 1) {
+            setProductCount(prev => prev -= 1)
+        }
+    }
+
+    const [orderedProducts, setOprderedProducts] = useLocalStorage([], 'orderedProducts');
+
+    function addToBusket() {
+        setOprderedProducts([...JSON.parse(localStorage.orderedProducts), {...productInfrom, count: productCount}])
+    }
 
     React.useEffect(() => {
         getProductInform(productId).then((data: any) => setProductInform(data[0]));
@@ -69,12 +86,12 @@ const ProducIntoduction = () => {
 
                     <div className={styles.actions}>
                         <div className={styles.counter}>
-                            <button className={styles.counterBtn}>-</button>
-                            1
-                            <button className={styles.counterBtn}>+</button>
+                            <button className={styles.counterBtn} data-type='decrement' onClick={choseCount}>-</button>
+                            {productCount}
+                            <button className={styles.counterBtn} data-type='increment' onClick={choseCount}>+</button>
                         </div>
 
-                        <button className={styles.addToBusket}>В корзину</button>
+                        <button className={styles.addToBusket} onClick={addToBusket}>В корзину</button>
 
                         <button className={styles.addToPrefer}>♥</button>
                     </div>

@@ -4,6 +4,7 @@ type productSnippetProps = {
     productCount: number | null,
     cost: string,
     costLineThrough: string | null,
+    updateOrderdProducts: any | null
 }
 
 export default productSnippetProps;

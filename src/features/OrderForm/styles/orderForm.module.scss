@@ -270,3 +270,67 @@
         color: #D75702;
     }
 }
+
+.backgroundColor {
+    display: none;
+
+    width: 100vw;
+    height: 100vh;
+    background-color: #77777763;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.disabled {
+    display: flex;
+}
+
+.block {
+    width: 515px;
+    height: 503px;
+    padding: 34px;
+    background-color: #fff;
+    border-radius: 10px;
+
+    position: relative;
+
+    @include md-d {
+        width: 92vw;
+    }
+}
+
+.close {
+    background-color: transparent;
+    position: absolute;
+    border: 0;
+    right: 34px;
+    cursor: pointer;
+}
+
+.popUpTtl {
+    font-family: "Inter";
+    font-size: 64px;
+    font-weight: 400;
+    line-height: 79px;
+
+    color: #101010;
+
+    margin-bottom: 16px;
+}
+
+.popUpParagraph {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    letter-spacing: 0em;
+    text-align: left;
+
+    color: #b3b3b3;
+}

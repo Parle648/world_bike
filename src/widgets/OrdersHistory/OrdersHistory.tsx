@@ -22,12 +22,14 @@ const OrdersHistory = () => {
                     trigger_bacground='#fff'
                 > 
                     <ProductSnippet 
+                        updateOrderdProducts={null}
                         img={bike} 
                         title='Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018' 
                         productCount={null} 
                         cost='123444'
                         costLineThrough={null}/>
-                    <ProductSnippet 
+                    <ProductSnippet
+                        updateOrderdProducts={null} 
                     img={bike} 
                     title='Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018' 
                     productCount={null} 
@@ -41,13 +43,15 @@ const OrdersHistory = () => {
                     order_status='Новый заказ'
                     trigger_bacground='#F8F8F8'
                 > 
-                    <ProductSnippet 
+                    <ProductSnippet
+                        updateOrderdProducts={null} 
                         img={bike} 
                         title='Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018' 
                         productCount={null} 
                         cost='123444'
                         costLineThrough={null}/>
-                    <ProductSnippet 
+                    <ProductSnippet
+                        updateOrderdProducts={null} 
                     img={bike} 
                     title='Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018' 
                     productCount={null} 
