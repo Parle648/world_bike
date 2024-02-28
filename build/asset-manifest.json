@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.6ab52574.css",
-    "main.js": "/static/js/main.3b56d586.js",
+    "main.css": "/static/css/main.b628dc8f.css",
+    "main.js": "/static/js/main.cdf1c0fd.js",
     "static/media/video-background.png": "/static/media/video-background.50aa82922a5d55d59183.png",
     "static/media/main-background.png": "/static/media/main-background.041f322c5942bf0e836e.png",
     "static/media/best-from-byke-world.png": "/static/media/best-from-byke-world.aadb3a01ddc8a0a9c55c.png",
@@ -67,11 +67,11 @@
     "static/media/close.svg": "/static/media/close.b068dbf06b8761244a643319fd3a8281.svg",
     "static/media/filter.svg": "/static/media/filter.9e713263bfe9733f6eef5c10f2468c94.svg",
     "static/media/block-decoration.svg": "/static/media/block-decoration.53507065e5f1e0342c11d75364b5a959.svg",
-    "main.6ab52574.css.map": "/static/css/main.6ab52574.css.map",
-    "main.3b56d586.js.map": "/static/js/main.3b56d586.js.map"
+    "main.b628dc8f.css.map": "/static/css/main.b628dc8f.css.map",
+    "main.cdf1c0fd.js.map": "/static/js/main.cdf1c0fd.js.map"
   },
   "entrypoints": [
-    "static/css/main.6ab52574.css",
-    "static/js/main.3b56d586.js"
+    "static/css/main.b628dc8f.css",
+    "static/js/main.cdf1c0fd.js"
   ]
 }

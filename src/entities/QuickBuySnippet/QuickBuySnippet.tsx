@@ -49,7 +49,7 @@ const QuickBuySnippet = ({img, title, opened, setOpened, children}: quickBuyProp
                     <img className={styles.img} src={bykes[img]} alt="img" />
                     <h2 className={styles.productTtle}>{title}</h2>
                 </div>
-                <div className="">
+                <div className={styles.inputs}>
                     {children}
                 </div>
             </div>

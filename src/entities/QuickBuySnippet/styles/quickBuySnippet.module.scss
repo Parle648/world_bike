@@ -9,6 +9,10 @@
     position: fixed;
     left: 0;
     z-index: 10;
+
+    @include md-d {
+        width: 92vw;
+    }
 }
 
 .block {
@@ -86,4 +90,8 @@
 
 .blockDisabled {
     display: none;
+}
+
+.inputs {
+    width: 100%;
 }

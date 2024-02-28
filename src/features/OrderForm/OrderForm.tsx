@@ -15,7 +15,7 @@ const OrderForm = () => {
 
     function closeBlock() {
         setOrderedProducts([]);
-        window.location.href = 'http://localhost:3000/catalog';
+        window.location.href = 'https://wb-build.onrender.com/catalog';
         setOpened(!opened);
     }
 
