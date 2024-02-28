@@ -1,25 +1,20 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/catalogList.module.scss';
 import ProductListCard from '../../entities/ProductListCart/ProductListCart';
 import flag from '../../imgs/italy-flag.png';
 import SortByFeature from '../../features/SortByFeature/SortByFeature';
 import filter from '../../imgs/filter.svg';
 import ListPagesFeature from '../../features/ProductListPages/ListPagesFeature';
-import ProductListSceletonLoader from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
 import ImageGrid from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
 import CatalogFiltersForm from '../../features/CatalogFiltersForm/CatalogFiltersForm';
 import close from '../../imgs/close.svg';
-import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 
 const CatalogProductList = ({products, setProducts}: {products: any, setProducts:any}) => {
-    const [filtersOpened, setFiltersOpened] = React.useState<boolean>(false);
+    const [filtersOpened, setFiltersOpened] = useState<boolean>(false);
 
     function openFilters() {
         setFiltersOpened(!filtersOpened);
     };
-
-    console.log(products);
-    
 
     return (
         <div className={styles.block}>

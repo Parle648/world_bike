@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import styles from './styles/bestBykes.module.scss';
 import splash from '../../../imgs/splash-img.png';
 import ProductCard from '../../../entities/ProductCard/ProductCard';

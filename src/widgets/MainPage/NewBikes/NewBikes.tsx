@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ProductCard from '../../../entities/ProductCard/ProductCard';
 import styles from './styles/newBikes.module.scss';
 
@@ -8,8 +8,7 @@ import bike from '../../../imgs/bike-img.png';
 import btnArrow from '../../../imgs/slider-btn.png';
 
 const NewBikes = () => {
-
-    const [sliderMargin, setSliderMargin] = React.useState(0)
+    const [sliderMargin, setSliderMargin] = useState<number>(0);
 
     function sliderMove(event: React.MouseEvent<HTMLButtonElement>) {
         const margin = document.body.clientWidth > 950 ? 430 : 330;

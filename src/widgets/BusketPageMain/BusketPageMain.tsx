@@ -8,11 +8,11 @@ import NewBikes from '../MainPage/NewBikes/NewBikes';
 import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 
 const BusketPageMain = () => {
-    // const [orderedProducts, setOrderedProducts] = React.useState(JSON.parse(localStorage.orderedProducts))
-
     const [orderedProducts, setOrderedProducts] = useLocalStorage([], 'orderedProducts');
 
-    const orderAmount = orderedProducts.reduce((amount: any, item: any) => amount + +item.cost * +item.count, 0);
+    const orderAmount = orderedProducts.reduce((amount: number, item: any) => {
+        return amount + +item.cost * +item.count
+    }, 0);
     
     function updateOrderdProducts(event: any) {
         if (event.target.dataset.type === 'close') {

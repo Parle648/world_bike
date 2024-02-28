@@ -1,4 +1,4 @@
-import React, { ReactHTMLElement, ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 import styles from './styles/accountBlock.module.scss';
 import PersonalDataForm from '../../features/PersonalDataForm/PersonalDataForm';
 import OrdersHistory from '../OrdersHistory/OrdersHistory';

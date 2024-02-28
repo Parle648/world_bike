@@ -4,8 +4,6 @@ import background from '../../../imgs/main-background.png';
 import Header from '../Header/Header';
 import { Link } from 'react-router-dom';
 
-
-
 const MainHeroSection = () => {
     return (
         <div className={styles.block} style={{background: `url(${background})`, backgroundRepeat: 'no-repeat'}}>
