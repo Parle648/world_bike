@@ -1,8 +1,8 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styles from './styles/quickBuySnippet.module.scss';
-import close from  '../../imgs/close.svg';
 import quickBuyProps from './types/quickBuyProps';
 
+import close from  '../../imgs/close.svg';
 import look from '../../imgs/look.png';
 import orbea from '../../imgs/orbea.png';
 import scottSecond from '../../imgs/scott-second.png';
@@ -26,8 +26,7 @@ const bykes: {[key: string]: string} = {
 }
 
 const QuickBuySnippet = ({img, title, opened, setOpened, children}: quickBuyProps) => {
-    
-    React.useEffect(() => {
+    useEffect(() => {
         if (!opened) {
             document.body.style.overflow = "hidden";
         } else {
