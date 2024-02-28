@@ -16,7 +16,7 @@ const ProductListCart = ({country, soldOut, image, title, cost}: productCardType
         <div className={styles.block}>
             <img className={styles.flag} src={country} alt="country" />
             <span className={soldOut ? styles.soldOut : styles.hasAtShop}>{soldOut ? 'Распродано' : 'В наличии'}</span>
-            <img className={styles.img} src={image} alt="image" />
+            <img className={styles.img} src={image} alt="block-background" />
             <h3 className={styles.ttl}>{title}</h3>
             <h4 className={styles.cost}>{cost}</h4>
             <button className={styles.seeMore} onClick={openOrderBlock}>В 1 клик</button>

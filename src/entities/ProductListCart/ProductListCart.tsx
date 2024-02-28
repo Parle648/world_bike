@@ -39,7 +39,7 @@ const ProductListCard = ({country, soldOut, image, title, cost, id}: productCard
                 <img className={styles.flag} src={country} alt="country" />
                 <span className={soldOut ? styles.soldOut : styles.hasAtShop}>{soldOut ? 'Распродано' : 'В наличии'}</span>
     
-                <img className={styles.img} src={bykes[image]} alt="image" />
+                <img className={styles.img} src={bykes[image]} alt="bike" />
     
                 <h3 className={styles.ttl}>{title}</h3>
                 <h4 className={styles.cost}>{cost}</h4>
