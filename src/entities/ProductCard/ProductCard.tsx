@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/productCard.module.scss';
 import productCardType from './types/productCartProps';
 import QuickBuySnippet from '../QuickBuySnippet/QuickBuySnippet';
@@ -6,8 +6,7 @@ import QuickOrderForm from '../../features/QuickOrderForm/QuickOrderForm';
 import bicycle from '../../imgs/bike-img.png';
 
 const ProductListCart = ({country, soldOut, image, title, cost}: productCardType) => {
-
-    const [opened, setOpened] = React.useState<boolean>(true);
+    const [opened, setOpened] = useState<boolean>(true);
 
     function openOrderBlock() {
         setOpened(!opened);

@@ -1,8 +1,12 @@
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+import styles from './styles/productListCard.module.scss';
+
 import QuickOrderForm from '../../features/QuickOrderForm/QuickOrderForm';
 import QuickBuySnippet from '../QuickBuySnippet/QuickBuySnippet';
-import styles from './styles/productListCard.module.scss';
-import bicycle from '../../imgs/bike-img.png';
-import { Dispatch, SetStateAction } from 'react';
+
+import productCardType from './types/ProductListCartProps';
 
 import look from '../../imgs/look.png';
 import orbea from '../../imgs/orbea.png';
@@ -13,17 +17,6 @@ import treckFx from '../../imgs/treck-fx.png';
 import treckMarlin from '../../imgs/treck-marlin.png'; 
 import treckMarlinLumen from '../../imgs/treck-marlin-lumen.png'; 
 import orbeaBlack from '../../imgs/orbea-black.png';
-import React from 'react';
-import { Link } from 'react-router-dom';
-
-interface ProductCardType {
-    id: number,
-    country: string,
-    soldOut: boolean,
-    image: string,
-    title: string,
-    cost: string,
-}
 
 const bykes: {[key: string]: string} = {
     "look.png": look,
@@ -37,14 +30,8 @@ const bykes: {[key: string]: string} = {
     "orbea-black.png": orbeaBlack
 }
 
-const ProductListCard = ({country, soldOut, image, title, cost, id}: ProductCardType) => {
-
-    function openOrderBlock(event: any) {
-        event.stopPropagation()
-        setOpened(!opened);
-    };
-
-    const [opened, setOpened] = React.useState(true);
+const ProductListCard = ({country, soldOut, image, title, cost, id}: productCardType) => {
+    const [opened, setOpened] = useState<boolean>(true);
 
     return (
         <div className={styles.block}>
