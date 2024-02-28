@@ -1,16 +1,8 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles/blogArticle.module.scss';
+import blogArticleProps from './types/blogArticleProps';
 
-type Props = {
-    background: string,
-    date: string,
-    hashTag: string,
-    description: string,
-    url: string,
-}
-
-const BlogArticle = ({background, date, hashTag, description, url}: Props) => {
+const BlogArticle = ({background, date, hashTag, description, url}: blogArticleProps) => {
     return (
         <div className={styles.block}>
             <img className={styles.background} src={background} alt="background" />
