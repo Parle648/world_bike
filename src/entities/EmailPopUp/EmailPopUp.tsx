@@ -1,12 +1,11 @@
-import React from 'react';
+import { useEffect } from 'react';
 import styles from './styles/emailPopUp.module.scss';
 import close from '../../imgs/close.svg';
 import checkmark from '../../imgs/mail-checkmark.png';
 import emailPopUpProps from './types/emailPopUpProps';
 
 const EmailPopUp = ({opened, setOpened}: emailPopUpProps) => {
-    
-    React.useEffect(() => {
+    useEffect(() => {
         if (!opened) {
             document.body.style.overflow = "hidden";
         } else {
