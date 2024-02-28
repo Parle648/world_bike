@@ -1,4 +1,4 @@
-import React from 'react';
+import { useEffect, useState } from 'react';
 import styles from './styles/burgerNavigation.module.scss';
 import burgerTrigger from '../../imgs/burger-trigger.png';
 import close from '../../imgs/close.svg';
@@ -7,14 +7,13 @@ import MobileDropDown from './MobileDropDown/MobileDropDown';
 import blackLogo from '../../imgs/black-logo.png';
 
 const BurgerNavigation = () => {
-    const [opened, setOpened] = React.useState(false);
+    const [opened, setOpened] = useState(false);
 
     function navigationToggle() {
         setOpened(!opened);
     };
 
-
-    React.useEffect(() => {
+    useEffect(() => {
         if(opened) {
             document.body.style.overflow = "hidden";
         } else {
@@ -28,9 +27,9 @@ const BurgerNavigation = () => {
                 <img src={burgerTrigger} alt="burgerTrigger" />
             </button>
             <div className={`${styles.navigation} ${opened && styles.navigationOpened}`}>
-                <div className="">
+                <>
                     <button className={styles.close} onClick={navigationToggle}>
-                        <img src={close} alt="" />
+                        <img src={close} alt="close-btn" />
                     </button>
                     <div className={styles.desktop}>
                         <h2 className={styles.ttl} >Доп. Информация</h2>
@@ -124,7 +123,7 @@ const BurgerNavigation = () => {
                             </li>
                         </ul>
                     </nav>
-                </div>
+                </>
             </div>
         </div>
     );

@@ -1,11 +1,11 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/mobileDropDown.module.scss';
 import dropDownArrow from '../../../imgs/drop-down-arrow.svg';
 import mobileDropDownProps from './types/mobileDropDownProps';
 import { Link } from 'react-router-dom';
 
 const MobileDropDown = ({title, links}: mobileDropDownProps) => {
-    const [dropDownOpened, setDropDownOpened] = React.useState(false);
+    const [dropDownOpened, setDropDownOpened] = useState(false);
     function openDropDown() {
         setDropDownOpened(!dropDownOpened);
     };
@@ -26,10 +26,6 @@ const MobileDropDown = ({title, links}: mobileDropDownProps) => {
             </ul>
         </div>
     );
-};
-
-MobileDropDown.propTypes = {
-    
 };
 
 export default MobileDropDown;
