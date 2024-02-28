@@ -1,9 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/search.module.scss';
 import search from '../../imgs/search.svg';
 
 const Search = () => {
-    const [opened, setOpened] = React.useState(false);
+    const [opened, setOpened] = useState<boolean>(false);
 
     function toggleForm() {
         setOpened(!opened);

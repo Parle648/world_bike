@@ -1,10 +1,9 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/sortByfeature.module.scss';
 import arrow from '../../imgs/filters-arrow.svg';
 
 const SortByFeature = () => {
-
-    const [opened, setOpened] =React.useState(false);
+    const [opened, setOpened] = useState<boolean>(false);
 
     function listToggle() {
         setOpened(!opened);

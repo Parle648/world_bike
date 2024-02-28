@@ -10,7 +10,7 @@ const OrderForm = () => {
         setOpened(!opened)
     }
 
-    const [opened, setOpened] = React.useState(false);
+    const [opened, setOpened] = React.useState<boolean>(false);
     const [orderedProducts, setOrderedProducts] = useLocalStorage([], 'orderedProducts')
 
     function closeBlock() {

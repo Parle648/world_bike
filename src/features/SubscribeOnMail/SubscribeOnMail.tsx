@@ -1,13 +1,13 @@
-import React from 'react';
+import { useState } from 'react';
 import styles from './styles/subscribeOnMail.module.scss';
 import arrow from '../../imgs/checkbox-arrow.svg';
 import EmailPopUp from '../../entities/EmailPopUp/EmailPopUp';
 
 const SubscribeOnMail = () => {
-    const [opened, setOpened] = React.useState<boolean>(true);
+    const [opened, setOpened] = useState<boolean>(true);
 
     function viewCongratulation(event: any) {
-        event?.preventDefault()
+        event?.preventDefault();
         setOpened(!opened);
     };
 
