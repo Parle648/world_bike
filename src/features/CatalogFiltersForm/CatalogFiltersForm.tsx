@@ -1,8 +1,10 @@
-import { useRef, useState } from 'react';
+import { useContext, useRef, useState } from 'react';
 import styles from './styles/catalogForm.module.scss';
 import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 import arrow from '../../imgs/filters-arrow.svg';
 import getProductsByProps from './api/getProductsByProps';
+import { catalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
+import provider from '../../widgets/CatalogProductList/catalogProvider/types/catalogProviderTypes';
 
 const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts:any}) => {
     const [cost, setCost] = useState<number[]>([0, 950000])
@@ -19,6 +21,9 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
         "brands": [''], 
         "frame_materials": [''] }, 'filters');
     
+    const providerData = useContext<{productListState: provider, setproductListState: any} | undefined>(catalogProvider);
+
+    console.log(JSON.stringify(providerData?.productListState.currentProducts) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}');
 
     function getByFilters(event: any): void {
         const newStorage: {[key: string]: any} = {
