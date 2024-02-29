@@ -11,9 +11,9 @@ const CatalogMainSection = () => {
         <div className='wrapper'>
             <main className={styles.block}>
                 <div className={styles.desctopFilter}>
-                    <CatalogFiltersForm products={products} setProducts={setProducts} />
+                    <CatalogFiltersForm />
                 </div>
-                <CatalogProductList products={products} setProducts={setProducts} />
+                <CatalogProductList />
             </main>
         </div>
     );

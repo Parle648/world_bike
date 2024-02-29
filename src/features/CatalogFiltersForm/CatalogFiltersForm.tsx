@@ -1,4 +1,4 @@
-import { useContext, useRef, useState } from 'react';
+import { memo, useContext, useRef, useState } from 'react';
 import styles from './styles/catalogForm.module.scss';
 import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 import arrow from '../../imgs/filters-arrow.svg';
@@ -6,50 +6,64 @@ import getProductsByProps from './api/getProductsByProps';
 import { catalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
 import provider from '../../widgets/CatalogProductList/catalogProvider/types/catalogProviderTypes';
 
-const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts:any}) => {
+const CatalogFiltersForm = memo(() => {
     const [cost, setCost] = useState<number[]>([0, 950000])
     const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true)
-    const unvisible = useRef<boolean>(true)
+    // const unvisible = useRef<boolean>(true)
 
-    const [storage, setLocalStorage] = useLocalStorage({
-        'has': false, 
-        "categories": [''], 
-        "cost": {
-            'from': 0, 
-            'to': 1200000
-        }, 
-        "brands": [''], 
-        "frame_materials": [''] }, 'filters');
+    // const [storage, setLocalStorage] = useLocalStorage({
+    //     'has': false, 
+    //     "categories": [''], 
+    //     "cost": {
+    //         'from': 0, 
+    //         'to': 1200000
+    //     }, 
+    //     "brands": [''], 
+    //     "frame_materials": [''] }, 'filters');
     
-    const providerData = useContext<{productListState: provider, setproductListState: any} | undefined>(catalogProvider);
+    const catalogStore = useContext<{productListState: provider, setproductListState: any, handleCatalogState: any} | undefined>(catalogProvider);
+    
+    // function getByFilters(event: any): void {
+        
+    //     // const newStorage: {[key: string]: any} = {
+    //     //     has: storage.has, 
+    //     //     categories: storage.categories, 
+    //     //     cost: storage.cost, 
+    //     //     brands: storage.brands, 
+    //     //     frame_materials: storage.frame_materials
+    //     // }
 
-    console.log(JSON.stringify(providerData?.productListState.currentProducts) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}');
+    //     if (event.target.dataset.filter === 'has') {
+    //         console.log(catalogStore);
 
-    function getByFilters(event: any): void {
-        const newStorage: {[key: string]: any} = {
-            has: storage.has, 
-            categories: storage.categories, 
-            cost: storage.cost, 
-            brands: storage.brands, 
-            frame_materials: storage.frame_materials
-        }
-
-        if (event.target.dataset.filter === 'has') {
-            newStorage.has = !storage.has;
-            event.target.nextElementSibling.classList.toggle(styles.hasActive)            
-        } else {
-            console.log(event.target.checked);
-            event.target.nextElementSibling.classList.toggle(styles.radioActive);
-
-            event.target.nextElementSibling.classList.contains(styles.radioActive) ? 
-            newStorage[event.target.dataset.filter].push(event.target.dataset.name) : 
-            newStorage[event.target.dataset.filter] = newStorage[event.target.dataset.filter].filter((type: string) => type !== event.target.dataset.name);
-        }
-        setLoaderUnvisible(unvisible.current = false)
+    //         console.log({
+    //             ...catalogStore?.productListState,
+    //             // ["currentFilters"]: {
+    //             //     ...catalogStore?.productListState.currentFilters, 
+    //             //     ["has"]: event.target.checked
+    //             // }
+    //         });
+            
+    //         catalogStore?.setproductListState((prev: any) => {
+    //             return ({
+    //                 ...prev,
+    //                 ["currentFilters"]: {
+    //                     ...prev.currentFilters, 
+    //                     ["has"]: event.target.checked
+    //                 }
+    //             })
+    //         });
+    //         catalogStore?.setproductListState((prev: any) => {
+    //             console.log(prev);
+    //             return (prev);
+    //         })
+    //     } else {
+    //     }
+    //     // setLoaderUnvisible(unvisible.current = false)
      
-        setLocalStorage(newStorage);
-        getProductsByProps(`filters=${JSON.stringify(newStorage)}`).then((data: any) => {setProducts(JSON.parse(data.data)); setLoaderUnvisible(unvisible.current = true)})
-    }
+    //     // setLocalStorage(newStorage);
+    //     // getProductsByProps(`filters=${JSON.stringify(newStorage)}`).then((data: any) => {setProducts(JSON.parse(data.data)); setLoaderUnvisible(unvisible.current = true)})
+    // }
 
     // const [margins, setMargins] = React.useState([0, 0.25])
 
@@ -72,13 +86,14 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
             </div>
             <label className={styles.hasOnlyLabel}>
                 <h2 className={styles.formTtl}>Только в наличии</h2>
-                <input className={`${styles.hasOnly} ${storage.has && styles.hasActive}`} 
-                checked={storage.has} 
+                <input className={`${styles.hasOnly}`} 
+                // checked={storage.has} 
                 data-filter='has' 
                 type="checkbox" 
                 name='hasOnly' 
                 id="hasOnly" 
-                onChange={getByFilters}/>
+                onChange={catalogStore?.handleCatalogState && catalogStore.handleCatalogState}
+                />
                 <div className={styles.fakeCheckbox} id={styles.fakeCheckbox}></div>
             </label>
             <div className={styles.checkboxBlock}>
@@ -90,9 +105,10 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    onChange={getByFilters} 
+                    // onChange={getByFilters}
+
                     />
-                    <div className={`${styles.fakeSquareCheckbox} ${storage.categories.some((string: string) => string === 'triatlon') && styles.radioActive}}`}>✓</div>
+                    <div className={`${styles.fakeSquareCheckbox}`}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Велосипеды для триатлона</h2>
                 </label>
                 <label className={styles.checkboxLabel}>
@@ -101,7 +117,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-filter='categories' 
                     type="checkbox"
                     name='categories'
-                    onChange={getByFilters} 
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Горные велосипеды</h2>
@@ -112,7 +129,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-filter='categories' 
                     type="checkbox"
                     name='categories'  
-                    onChange={getByFilters} 
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Городские велосипеды</h2>
@@ -123,7 +141,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    onChange={getByFilters} 
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Гравийные велосипеды</h2>
@@ -134,7 +153,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Двухподвесные велосипеды</h2>
@@ -155,23 +175,22 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     type="number" 
                     id='first-input'
                     placeholder={``} 
-                    value={storage.cost.from}
                     name='first'
                     onInput={((event: any) => {
-                        const newStorage: {[key: string]: any} = {
-                            has: storage.has, 
-                            categories: storage.categories, 
-                            cost: storage.cost, 
-                            brands: storage.brands, 
-                            frame_materials: storage.frame_materials
-                        }
+                        // const newStorage: {[key: string]: any} = {
+                        //     has: storage.has, 
+                        //     categories: storage.categories, 
+                        //     cost: storage.cost, 
+                        //     brands: storage.brands, 
+                        //     frame_materials: storage.frame_materials
+                        // }
 
-                        setCost([event.target.value, cost[1]]);
-                        newStorage.cost.from = event.target.value;
-                        setLocalStorage(newStorage);
+                        // setCost([event.target.value, cost[1]]);
+                        // newStorage.cost.from = event.target.value;
+                        // setLocalStorage(newStorage);
                     })}
                     onBlur={() => {
-                        getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
+                        // getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
                     }} />
                     
                     -
@@ -180,22 +199,22 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     type="number" 
                     id='second-input'
                     placeholder={`${cost[1]}`} 
-                    value={storage.cost.to}
+                    // value={storage.cost.to}
                     name='second'
                     onInput={((event: any) => {
-                        const newStorage: {[key: string]: any} = {
-                            has: storage.has, 
-                            categories: storage.categories, 
-                            cost: storage.cost, 
-                            brands: storage.brands, 
-                            frame_materials: storage.frame_materials
-                        }
-                        setCost([cost[0], event.target.value]);
-                        newStorage.cost.to = event.target.value;
-                        setLocalStorage(newStorage);
+                        // const newStorage: {[key: string]: any} = {
+                        //     has: storage.has, 
+                        //     categories: storage.categories, 
+                        //     cost: storage.cost, 
+                        //     brands: storage.brands, 
+                        //     frame_materials: storage.frame_materials
+                        // }
+                        // setCost([cost[0], event.target.value]);
+                        // newStorage.cost.to = event.target.value;
+                        // setLocalStorage(newStorage);
                     })} 
                     onBlur={() => {
-                        getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
+                        // getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
                     }} />
                 </div>
 
@@ -210,7 +229,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='look' 
                     data-filter='brands' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Look</h2>
@@ -221,7 +241,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='trek' 
                     data-filter='brands' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Trek</h2>
@@ -232,7 +253,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='orbea' 
                     data-filter='brands' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Orbea</h2>
@@ -243,7 +265,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='scott' 
                     data-filter='brands' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Scott</h2>
@@ -254,7 +277,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='black' 
                     data-filter='brands' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Black</h2>
@@ -270,7 +294,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='Aluminum' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Алюминий</h2>
@@ -281,7 +306,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='Carbon Fiber' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Карбон</h2>
@@ -292,7 +318,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='Steel' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Сталь</h2>
@@ -303,7 +330,8 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
                     data-name='Titanium' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    onChange={getByFilters}
+                    // onChange={getByFilters}
+
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Титан</h2>
@@ -313,6 +341,6 @@ const CatalogFiltersForm = ({products, setProducts}: {products: any, setProducts
             <button className={styles.removeFilters}>Сбросить фильтры</button>
         </form>
     );
-};
+});
 
 export default CatalogFiltersForm;
