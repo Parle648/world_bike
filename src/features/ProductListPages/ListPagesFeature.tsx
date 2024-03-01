@@ -5,7 +5,7 @@ import singleArrow from '../../imgs/list-page-arrow.svg';
 import getProductsPage from './api/getProducts';
 import productPageInterface from './types/productPageInterface';
 import productListPagesProps from './types/productListPagesProps';
-import { catalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
+import { CatalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
 
 const ListPagesFeature = () => {
     const [page, setPage] = React.useState<number>(1);
@@ -14,11 +14,11 @@ const ListPagesFeature = () => {
     //     getProductsPage(page).then((data: productPageInterface) => setProducts(data));
     // }, [page]);
 
-    function choosePage(event: React.MouseEvent<HTMLButtonElement>) {
-        setPage(+event.currentTarget.innerHTML);
-    };
+    // function choosePage(event: React.MouseEvent<HTMLButtonElement>) {
+    //     setPage(+event.currentTarget.innerHTML);
+    // };
 
-    const catalogStore = useContext(catalogProvider);
+    const catalogStore = useContext(CatalogProvider);
 
     const pages = [];
 

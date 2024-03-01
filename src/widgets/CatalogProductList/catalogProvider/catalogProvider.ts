@@ -1,6 +1,6 @@
 import { createContext } from "react";
 import provider from "./types/catalogProviderTypes";
 
-const catalogProvider = createContext<{productListState: provider, setproductListState: any, handleCatalogState: any} | undefined>(undefined);
+const CatalogProvider = createContext<{productListState: provider, setproductListState: any, handleCatalogState: any} | undefined>(undefined);
 
-export { catalogProvider };
+export { CatalogProvider };

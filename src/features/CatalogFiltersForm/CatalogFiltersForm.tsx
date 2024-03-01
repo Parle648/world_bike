@@ -1,10 +1,9 @@
 import { memo, useContext, useRef, useState } from 'react';
 import styles from './styles/catalogForm.module.scss';
-import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
+// import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
+// import getProductsByProps from './api/getProductsByProps';
 import arrow from '../../imgs/filters-arrow.svg';
-import getProductsByProps from './api/getProductsByProps';
-import { catalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
-import provider from '../../widgets/CatalogProductList/catalogProvider/types/catalogProviderTypes';
+import { CatalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
 
 const CatalogFiltersForm = memo(() => {
     const [cost, setCost] = useState<number[]>([0, 950000])
@@ -21,8 +20,7 @@ const CatalogFiltersForm = memo(() => {
     //     "brands": [''], 
     //     "frame_materials": [''] }, 'filters');
     
-    const catalogStore = useContext<{productListState: provider, setproductListState: any, handleCatalogState: any} | undefined>(catalogProvider);
-    
+    const catalogStore = useContext(CatalogProvider);
     // function getByFilters(event: any): void {
         
     //     // const newStorage: {[key: string]: any} = {
@@ -79,6 +77,10 @@ const CatalogFiltersForm = memo(() => {
     //     }
     // }
 
+    // function getByFilters(evetn: any) {
+        
+    // }
+
     return (
         <form className={styles.form}> 
             <div className={`${styles.loaderContainer} ${loaderUnvisible && styles.diabled}`}>
@@ -87,12 +89,12 @@ const CatalogFiltersForm = memo(() => {
             <label className={styles.hasOnlyLabel}>
                 <h2 className={styles.formTtl}>Только в наличии</h2>
                 <input className={`${styles.hasOnly}`} 
-                // checked={storage.has} 
+                // checked={catalogStore?.productListState.currentFilters.has} 
                 data-filter='has' 
                 type="checkbox" 
                 name='hasOnly' 
                 id="hasOnly" 
-                onChange={catalogStore?.handleCatalogState && catalogStore.handleCatalogState}
+                onChange={catalogStore?.handleCatalogState}
                 />
                 <div className={styles.fakeCheckbox} id={styles.fakeCheckbox}></div>
             </label>
@@ -105,7 +107,7 @@ const CatalogFiltersForm = memo(() => {
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={`${styles.fakeSquareCheckbox}`}>✓</div>
@@ -117,8 +119,7 @@ const CatalogFiltersForm = memo(() => {
                     data-filter='categories' 
                     type="checkbox"
                     name='categories'
-                    // onChange={getByFilters}
-
+                    onChange={catalogStore?.handleCatalogState}
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Горные велосипеды</h2>
@@ -129,8 +130,7 @@ const CatalogFiltersForm = memo(() => {
                     data-filter='categories' 
                     type="checkbox"
                     name='categories'  
-                    // onChange={getByFilters}
-
+                    onChange={catalogStore?.handleCatalogState}
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Городские велосипеды</h2>
@@ -141,8 +141,7 @@ const CatalogFiltersForm = memo(() => {
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    // onChange={getByFilters}
-
+                    onChange={catalogStore?.handleCatalogState}
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Гравийные велосипеды</h2>
@@ -153,8 +152,7 @@ const CatalogFiltersForm = memo(() => {
                     data-filter='categories' 
                     type="checkbox"
                     name='categories' 
-                    // onChange={getByFilters}
-
+                    onChange={catalogStore?.handleCatalogState}
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
                     <h2 className={styles.formCheckboxTtl}>Двухподвесные велосипеды</h2>
@@ -229,7 +227,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='look' 
                     data-filter='brands' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -241,7 +239,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='trek' 
                     data-filter='brands' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -253,7 +251,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='orbea' 
                     data-filter='brands' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -265,7 +263,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='scott' 
                     data-filter='brands' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -277,7 +275,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='black' 
                     data-filter='brands' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -294,7 +292,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='Aluminum' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -306,7 +304,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='Carbon Fiber' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -318,7 +316,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='Steel' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
@@ -330,7 +328,7 @@ const CatalogFiltersForm = memo(() => {
                     data-name='Titanium' 
                     data-filter='frame_materials' 
                     name='checkbox'
-                    // onChange={getByFilters}
+                    onChange={catalogStore?.handleCatalogState}
 
                     />
                     <div className={styles.fakeSquareCheckbox}>✓</div>
