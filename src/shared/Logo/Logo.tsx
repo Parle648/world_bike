@@ -1,17 +1,14 @@
 import React from 'react';
 import logo from '../../imgs/logo.svg';
 import styles from './styles/logo.module.scss';
+import { Link } from 'react-router-dom';
 
 const Logo = () => {
     return (
-        <a href='/'>
+        <Link to='/'>
             <img className={styles.logo} src={logo} alt="logo" />
-        </a>
+        </Link>
     );
-};
-
-Logo.propTypes = {
-    
 };
 
 export default Logo;

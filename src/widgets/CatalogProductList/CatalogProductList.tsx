@@ -1,17 +1,14 @@
-import { useContext, useEffect, useState } from 'react';
+import { useContext, useState } from 'react';
 import styles from './styles/catalogList.module.scss';
 import ProductListCard from '../../entities/ProductListCart/ProductListCart';
 import flag from '../../imgs/italy-flag.png';
 import SortByFeature from '../../features/SortByFeature/SortByFeature';
 import filter from '../../imgs/filter.svg';
 import ListPagesFeature from '../../features/ProductListPages/ListPagesFeature';
-import ImageGrid from '../../entities/ProductListSceletopLoader/ProductListSceletonLoader';
 import CatalogFiltersForm from '../../features/CatalogFiltersForm/CatalogFiltersForm';
 import close from '../../imgs/close.svg';
 
 import { CatalogProvider } from './catalogProvider/catalogProvider';
-import provider from './catalogProvider/types/catalogProviderTypes';
-import setCatalogState from './helpers/setCatalogState';
 
 const CatalogProductList = () => {
     const [filtersOpened, setFiltersOpened] = useState<boolean>(false);
@@ -20,79 +17,7 @@ const CatalogProductList = () => {
         setFiltersOpened(!filtersOpened);
     };
 
-    // const [productListState, setproductListState] = useState<provider>({
-    //     pagesCount: 5,
-    //     currentPage: 1,
-    //     currentFilters: {
-    //         has: false,
-    //         categories: [],
-    //         cost: {
-    //             from: 0,
-    //             to: 1200000
-    //         },
-    //         brands: [],
-    //         frame_materials: [],
-    //         sortBy: ''
-    //     },
-    //     currentProducts: [],
-    // })
-
     const providerData = useContext(CatalogProvider);
-
-    // console.log(providerData);
-    
-
-    // useEffect(() => {
-    //     if (JSON.stringify(productListState?.currentFilters) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
-    //         new Promise((resolve, reject) => {
-    //             try {
-    //                 resolve(fetch(`http://localhost:3002/api/products/pages/:${1}`))
-    //             } catch (error) {
-    //                 reject(console.error(error));
-    //             }
-    //         })
-    //         .then((response: any) => response.json())
-    //         .then((data: any) => {
-    //             setproductListState(prev => {
-    //                 return ({
-    //                     ...prev, 
-    //                     ["currentProducts"]: data.products, 
-    //                     ["pagesCount"]: data.pages,
-    //                     ["currentPage"]: 1,
-    //                 })
-    //             });
-    //         });
-    //     } else {
-    //         new Promise((resolve, reject) => {
-    //             try {
-    //                 resolve(fetch(`http://localhost:3002/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${productListState.currentPage}`));
-    //             } catch (error) {
-    //                 reject(console.error(error));
-    //             };
-    //         })
-    //         .then((response: any) => response.json())
-    //         .then((data: any) => {
-    //             setproductListState(prev => {
-    //                 return ({
-    //                     ...prev, 
-    //                     ["currentProducts"]: JSON.parse(data.data), 
-    //                     ["pagesCount"]: data.pagesCount <= 0 ? 1 : data.pagesCount,
-    //                     ["currentPage"]: 1,
-    //                 })
-    //             });
-    //         })
-    //     }
-    // }, [])
-
-    // const handleCatalogState = (event: any) => {
-    //     console.log(event.target.dataset);
-        
-    //     if ( event.target.dataset.element === "pagebtn" ) {
-    //         console.log(setCatalogState(productListState, setproductListState, +event.target.dataset.value));
-    //     } else if (event.target.dataset.filter === "has") {
-    //         console.log(event.target.checked);
-    //     }
-    // }
 
     return (
         <div className={styles.block}>
@@ -132,13 +57,13 @@ const CatalogProductList = () => {
                 {providerData?.productListState.currentProducts ? providerData?.productListState.currentProducts.map((product: any) => {
                     return (
                         <ProductListCard 
-                        key={product.id} 
-                        id={product.id} 
-                        country={flag} 
-                        soldOut={product.in_stock} 
-                        image={product.background_img} 
-                        title={product.title} 
-                        cost={product.cost} />
+                            key={product.id} 
+                            id={product.id} 
+                            country={flag} 
+                            soldOut={product.in_stock} 
+                            image={product.background_img} 
+                            title={product.title} 
+                            cost={product.cost} />
                     );
                     }) : 
                     null

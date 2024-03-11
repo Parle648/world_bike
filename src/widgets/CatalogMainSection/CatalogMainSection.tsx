@@ -6,6 +6,7 @@ import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 import { CatalogProvider } from '../CatalogProductList/catalogProvider/catalogProvider';
 import provider from '../CatalogProductList/catalogProvider/types/catalogProviderTypes';
 import setCatalogState from '../CatalogProductList/helpers/setCatalogState';
+import Spinner from '../../shared/components/Spinner/Spinner';
 
 const CatalogMainSection = () => {
     const [products, setProducts] = useLocalStorage([], 'products')
@@ -26,6 +27,8 @@ const CatalogMainSection = () => {
         },
         currentProducts: [],
     })
+
+    const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true);
 
     const handleCatalogState = (event: any) => {
         if ( event.target.dataset.element === "pagebtn" ) {
@@ -119,6 +122,24 @@ const CatalogMainSection = () => {
                     }
                 })
             })
+        } else if (event.target.dataset.filter === "sort_by") {
+            setLoaderUnvisible(false);
+            setproductListState((prev: any) => {
+                setCatalogState({
+                    ...prev,
+                    ["currentFilters"]: {
+                        ...prev.currentFilters,
+                        ["sortBy"]: event.target.innerText
+                    }
+                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
+                return ({
+                    ...prev,
+                    ["currentFilters"]: {
+                        ...prev.currentFilters,
+                        ["sortBy"]: event.target.innerText
+                    }
+                })
+            })
         }
     }
 
@@ -172,6 +193,7 @@ const CatalogMainSection = () => {
             handleCatalogState
         }}>
                 <main className={styles.block}>
+                    <Spinner loaderUnvisible={loaderUnvisible} />
                     <div className={styles.desctopFilter}>
                         <CatalogFiltersForm />
                     </div>
