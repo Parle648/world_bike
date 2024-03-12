@@ -149,6 +149,7 @@ const CatalogMainSection = () => {
     }
 
     useEffect(() => {
+        setLoaderUnvisible(false);
         if (JSON.stringify(productListState?.currentFilters) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
             new Promise((resolve, reject) => {
                 try {
@@ -167,7 +168,8 @@ const CatalogMainSection = () => {
                         ["currentPage"]: 1,
                     })
                 });
-            });
+            })
+            .then(() => setLoaderUnvisible(true));
         } else {
             new Promise((resolve, reject) => {
                 try {
@@ -187,6 +189,7 @@ const CatalogMainSection = () => {
                     })
                 });
             })
+            .then(() => setLoaderUnvisible(true));
         }
     }, [])
 
