@@ -32,14 +32,16 @@ const CatalogMainSection = () => {
 
     const handleCatalogState = (event: any) => {
         if ( event.target.dataset.element === "pagebtn" ) {
+            setLoaderUnvisible(false);
             setproductListState((prev: any) => {
                 return ({
                     ...prev,
                     ["currentPage"]: +event.target.dataset.value,
                 })
             })
-            setCatalogState(productListState, setproductListState, +event.target.dataset.value);
+            setCatalogState(productListState, setproductListState, +event.target.dataset.value).then(() => setLoaderUnvisible(true));
         } else if (event.target.dataset.filter === "has") {
+            setLoaderUnvisible(false);
             setproductListState((prev: any) => {
                 setCatalogState({
                     ...prev,
@@ -47,7 +49,7 @@ const CatalogMainSection = () => {
                         ...prev.currentFilters,
                         ["has"]: event.target.checked,
                     }
-                }, setproductListState, 1);
+                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
                 return ({
                     ...prev,
                     ["currentFilters"]: {
@@ -57,6 +59,7 @@ const CatalogMainSection = () => {
                 })
             })
         } else if (event.target.dataset.filter === "categories") {
+            setLoaderUnvisible(false);
             setproductListState((prev: any) => {
                 const categories = prev.currentFilters.categories;
                 setCatalogState({
@@ -67,7 +70,7 @@ const CatalogMainSection = () => {
                         [...prev.currentFilters.categories, event.target.dataset.name] : 
                         categories.filter((string: string) => string !== event.target.dataset.name)
                     }
-                }, setproductListState, 1);
+                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
                 return ({
                     ...prev,
                     ["currentFilters"]: {
@@ -79,6 +82,7 @@ const CatalogMainSection = () => {
                 })
             })
         } else if (event.target.dataset.filter === "brands") {
+            setLoaderUnvisible(false);
             setproductListState((prev: any) => {
                 const brands = prev.currentFilters.brands;
                 setCatalogState({
@@ -89,7 +93,7 @@ const CatalogMainSection = () => {
                         [...prev.currentFilters.brands, event.target.dataset.name] : 
                         brands.filter((string: string) => string !== event.target.dataset.name)
                     }
-                }, setproductListState, 1);
+                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
                 return ({
                     ...prev,
                     ["currentFilters"]: {
@@ -101,6 +105,7 @@ const CatalogMainSection = () => {
                 })
             })
         } else if (event.target.dataset.filter === "frame_materials") {
+            setLoaderUnvisible(false);
             setproductListState((prev: any) => {
                 const frame_materials = prev.currentFilters.frame_materials;
                 setCatalogState({
@@ -111,7 +116,7 @@ const CatalogMainSection = () => {
                         [...prev.currentFilters.frame_materials, event.target.dataset.name] : 
                         frame_materials.filter((string: string) => string !== event.target.dataset.name)
                     }
-                }, setproductListState, 1);
+                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
                 return ({
                     ...prev,
                     ["currentFilters"]: {
