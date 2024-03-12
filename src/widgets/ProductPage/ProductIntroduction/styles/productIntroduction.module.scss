@@ -228,3 +228,12 @@
         background-color: #B3B3B3;
     }
 }
+
+.addToBusketActive {
+    background-color: #B3B3B3;
+    cursor: none;
+    &:hover {
+        background-color: #B3B3B3;
+        cursor: auto;
+    }
+}

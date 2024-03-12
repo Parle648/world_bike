@@ -25,15 +25,22 @@ const ProducIntoduction = () => {
 
     function addToBusket() {
         setOprderedProducts([...JSON.parse(localStorage.orderedProducts), {...productInfrom, count: productCount}])
+        setIsChoosed(true);
     }
 
     const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true);
+    const [isChoosed, setIsChoosed] = useState<boolean>(false);
 
     React.useEffect(() => {
         setLoaderUnvisible(false);
         getProductInform(productId)
         .then((data: any) => setProductInform(data[0]))
-        .then(() => setLoaderUnvisible(true));
+        .then(() => setLoaderUnvisible(true))
+        .then(() => {
+            if (orderedProducts.some((product: any) => product.id === productId)) {
+                setIsChoosed(true);
+            };
+        })
     }, [])
     
     return (
@@ -92,13 +99,17 @@ const ProducIntoduction = () => {
                     
 
                     <div className={styles.actions}>
+                    {!isChoosed &&
                         <div className={styles.counter}>
                             <button className={styles.counterBtn} data-type='decrement' onClick={choseCount}>-</button>
                             {productCount}
                             <button className={styles.counterBtn} data-type='increment' onClick={choseCount}>+</button>
                         </div>
+                    }
 
-                        <button className={styles.addToBusket} onClick={addToBusket}>В корзину</button>
+                        <button className={`${styles.addToBusket} ${isChoosed && styles.addToBusketActive}`} onClick={addToBusket}>
+                            {isChoosed ? 'Придбано' : 'В корзину'}
+                        </button>
 
                         <button className={styles.addToPrefer}>♥</button>
                     </div>
