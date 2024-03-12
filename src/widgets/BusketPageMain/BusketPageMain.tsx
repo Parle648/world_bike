@@ -38,6 +38,10 @@ const BusketPageMain = () => {
         }
     }
 
+    function deleteAllProducts() {
+        setOrderedProducts([]);
+    }
+
     return (
         <main className={styles.block}>
             <div className="wrapper">
@@ -45,8 +49,8 @@ const BusketPageMain = () => {
                 <div className={styles.busketBlock}>
                     <div className={styles.orderedProducts}>
                         <Link className={styles.backToCatalog} to='./'>Вернуться к покупкам</Link>
-                        <button className={styles.clearBusket}>Очистить корзину</button>
-                        {orderedProducts.map((product: any) => {
+                        <button className={styles.clearBusket} onClick={deleteAllProducts} >Очистить корзину</button>
+                        {orderedProducts.length > 0 ? orderedProducts.map((product: any) => {
                             return (
                                 <ProductSnippet
                                 updateOrderdProducts={updateOrderdProducts}
@@ -56,7 +60,9 @@ const BusketPageMain = () => {
                                 cost={`${product.cost}`}
                                 costLineThrough={null} />
                             )
-                        })}
+                        }):
+                        <h2>Отличная возможность добавить товары в корзину</h2>
+                        }
                     </div>
                     <BusketInfo orderNumber={10223658} orderAmount={orderAmount} orderOff={0} />
                 </div>

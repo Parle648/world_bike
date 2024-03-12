@@ -25,7 +25,7 @@ const BusketInfo = ({orderNumber, orderAmount, orderOff}: busketInformProps) => 
                 <h4 className={styles.conclusionData}>{orderAmount - orderOff} ₴</h4>
             </div>
 
-            <Link className={styles.orderLink} to='/order'>Оформить заказ</Link>
+            <Link className={`${styles.orderLink} ${orderAmount - orderOff === 0 && styles.disabled}`} to='/order'>Оформить заказ</Link>
         </div>
     );
 };
