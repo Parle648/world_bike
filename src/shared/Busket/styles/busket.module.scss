@@ -1,0 +1,14 @@
+.block {
+    position: relative;
+}
+
+.point {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: rgb(209, 118, 0);
+
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}

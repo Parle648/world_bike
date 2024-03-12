@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './styles/busket.module.scss';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 const Busket = () => {
+    const [isOrder, setIsOrder] = useState<boolean>(false);
+
+    useEffect(() => {
+        if (JSON.parse(localStorage.orderedProducts).length > 0) {
+            setIsOrder(true)
+        } else {
+            setIsOrder(false)
+        };
+        
+    }, [localStorage.orderedProducts])
+
     return (
-        <div>
+        <div className={styles.block}>
             <a href='/busket' className={styles.busketOpen}>
+                <div className={isOrder && styles.point}></div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path d="M17 17H6.5L4.5 3H2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M4.78564 5H20.9999L17.9999 14H6.07135" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
