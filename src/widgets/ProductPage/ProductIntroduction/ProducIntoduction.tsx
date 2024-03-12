@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles/productIntroduction.module.scss';
 
 import bicycle from '../../../imgs/product-page-img.png';
 import getProductInform from './api/getProductInform';
 import productInformProps from './types/productInformProps';
 import { useLocalStorage } from '../../../shared/hooks/useLocalStorage';
+import Spinner from '../../../shared/components/Spinner/Spinner';
 
 const ProducIntoduction = () => {
     const [productInfrom, setProductInform] = React.useState<productInformProps>();
@@ -26,12 +27,18 @@ const ProducIntoduction = () => {
         setOprderedProducts([...JSON.parse(localStorage.orderedProducts), {...productInfrom, count: productCount}])
     }
 
+    const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true);
+
     React.useEffect(() => {
-        getProductInform(productId).then((data: any) => setProductInform(data[0]));
+        setLoaderUnvisible(false);
+        getProductInform(productId)
+        .then((data: any) => setProductInform(data[0]))
+        .then(() => setLoaderUnvisible(true));
     }, [])
     
     return (
         <div className="wrapper">
+            <Spinner loaderUnvisible={loaderUnvisible} />
             <div className={styles.block}>
                 <div className={styles.galary}>
                     <img className={styles.img} src={bicycle} alt="" />
