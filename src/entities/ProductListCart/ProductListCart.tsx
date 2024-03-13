@@ -35,7 +35,7 @@ const ProductListCard = ({country, soldOut, image, title, cost, id}: productCard
 
     return (
         <div className={styles.block}>
-            <Link to={`./:${id}`}>
+            <a href={`catalog/:${id}`}>
                 <img className={styles.flag} src={country} alt="country" />
                 <span className={soldOut ? styles.soldOut : styles.hasAtShop}>{soldOut ? 'Распродано' : 'В наличии'}</span>
     
@@ -43,7 +43,7 @@ const ProductListCard = ({country, soldOut, image, title, cost, id}: productCard
     
                 <h3 className={styles.ttl}>{title}</h3>
                 <h4 className={styles.cost}>{cost}</h4>
-            </Link>
+            </a>
 
             <button className={styles.seeMore} onClick={(event: any) => {event.stopPropagation(); setOpened(!opened)}}>В 1 клик</button>
             <QuickBuySnippet 
