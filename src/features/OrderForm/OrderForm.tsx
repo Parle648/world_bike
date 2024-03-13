@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles/orderForm.module.scss';
 import { Link } from 'react-router-dom';
 import close from '../../imgs/close.svg';
 import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
 import { useForm } from 'react-hook-form';
+import postOrder from './api/postOrder';
+import Spinner from '../../shared/components/Spinner/Spinner';
 
 type OrderFormFields = {
     name: string,
@@ -29,10 +31,17 @@ const OrderForm = () => {
         }
     } = useForm<OrderFormFields>();
 
+    const [loaderUnvivible, setLoaderUnvivible] = useState<boolean>(true);
+
     function sendOrder(data: OrderFormFields) {
-        console.log(data);
-        
-        setOpened(!opened)
+        setLoaderUnvivible(false)
+        postOrder({...data, ['choosed_products']: localStorage.orderedProducts})
+        .then((resp: any) => {
+            setLoaderUnvivible(true)
+            if (resp.message === 'Product created successfully') {
+                setOpened(!opened)
+            }
+        });
     }
 
     const [opened, setOpened] = React.useState<boolean>(false);
@@ -58,6 +67,7 @@ const OrderForm = () => {
 
     return (
         <form className={styles.form} onSubmit={handleSubmit(sendOrder)}>
+            <Spinner loaderUnvisible={loaderUnvivible} />
             <div className={`${styles.backgroundColor} ${opened && styles.disabled}`}>
                 <div className={styles.block}>
                     <button className={styles.close} onClick={closeBlock}><img src={close} alt="close" /></button>
