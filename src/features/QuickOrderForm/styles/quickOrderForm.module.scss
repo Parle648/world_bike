@@ -61,3 +61,20 @@
         cursor: pointer;
     }
 }
+
+.label {
+    position: relative;
+    margin-top: 20px;
+}
+
+.error {
+    font-family: "Inter";
+    position: absolute;
+    color: red;
+    font-size: 14px;
+    top: -20px;
+}
+
+.invalidInput {
+    border: 1px solid red;
+}
