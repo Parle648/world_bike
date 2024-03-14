@@ -104,3 +104,30 @@
 .checkbox:checked + .fakeCheckbox {
     background-color: #F57520;
 }
+
+.label {
+    position: relative;
+    display: inline;
+}
+
+.mailError {
+    font-family: "Inter";
+    font-size: 14px;
+    color: red;
+    position: absolute;
+
+    top: -34px;
+}
+
+.agreeError {
+    font-family: "Inter";
+    font-size: 14px;
+    color: red;
+    position: absolute;
+
+    bottom: -95px;
+}
+
+.invalidInput {
+    border: 1px solid red;
+}
