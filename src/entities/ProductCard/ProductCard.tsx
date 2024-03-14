@@ -20,9 +20,9 @@ const ProductListCart = ({country, soldOut, image, title, cost}: productCardType
             <h3 className={styles.ttl}>{title}</h3>
             <h4 className={styles.cost}>{cost}</h4>
             <button className={styles.seeMore} onClick={openOrderBlock}>В 1 клик</button>
-            <QuickBuySnippet 
-                img={bicycle} 
-                title="Look 977 BLACK FLUO YELLOW GREEN XT 2x11S AMC 2018"
+            <QuickBuySnippet  
+                img={image} 
+                title={title}
                 opened={opened}
                 setOpened={setOpened} >
                     <QuickOrderForm id={1} />            

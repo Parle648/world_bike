@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;*{outline:none}body{overflow-x:hidden;transition:.35s}input[type=number]{-moz-appearance:textfield}input[type=number]:focus,input[type=number]:hover{-moz-appearance:number-input}.wrapper{margin:0 auto;position:relative;width:1280px}@media (max-width:1439.8px){.wrapper{width:92%}}.orange{color:#f53a20}*{box-sizing:border-box;list-style-type:none;margin:0;padding:0;text-decoration:none}
+/*# sourceMappingURL=main.24181f19.css.map*/

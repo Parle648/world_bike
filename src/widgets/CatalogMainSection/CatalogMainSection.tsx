@@ -153,7 +153,7 @@ const CatalogMainSection = () => {
         if (JSON.stringify(productListState?.currentFilters) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
             new Promise((resolve, reject) => {
                 try {
-                    resolve(fetch(`http://localhost:3001/api/products/pages/:${1}`))
+                    resolve(fetch(`https://wb-backend-a99n.onrender.com/api/products/pages/:${1}`))
                 } catch (error) {
                     reject(console.error(error));
                 }
@@ -173,7 +173,7 @@ const CatalogMainSection = () => {
         } else {
             new Promise((resolve, reject) => {
                 try {
-                    resolve(fetch(`http://localhost:3001/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${productListState.currentPage}`));
+                    resolve(fetch(`https://wb-backend-a99n.onrender.com/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${productListState.currentPage}`));
                 } catch (error) {
                     reject(console.error(error));
                 };

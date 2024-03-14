@@ -40,6 +40,8 @@ const OrderForm = () => {
             setLoaderUnvivible(true)
             if (resp.message === 'Product created successfully') {
                 setOpened(!opened)
+            } else {
+                alert('error')
             }
         });
     }

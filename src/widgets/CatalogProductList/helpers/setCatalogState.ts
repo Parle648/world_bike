@@ -2,7 +2,7 @@ export default function setCatalogState(productListState: any, setproductListSta
     if (JSON.stringify(productListState?.currentFilters) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
         return new Promise((resolve, reject) => {
             try {
-                resolve(fetch(`http://localhost:3001/api/products/pages/:${currentPage}`))
+                resolve(fetch(`https://wb-backend-a99n.onrender.com/api/products/pages/:${currentPage}`))
             } catch (error) {
                 reject(console.error(error));
             }
@@ -21,7 +21,7 @@ export default function setCatalogState(productListState: any, setproductListSta
     } else {
         return new Promise((resolve, reject) => {
             try {
-                resolve(fetch(`http://localhost:3001/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${currentPage}`));
+                resolve(fetch(`https://wb-backend-a99n.onrender.com/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${currentPage}`));
             } catch (error) {
                 reject(console.error(error));
             };
