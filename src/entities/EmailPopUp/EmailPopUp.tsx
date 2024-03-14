@@ -14,7 +14,7 @@ const EmailPopUp = ({opened, setOpened}: emailPopUpProps) => {
     }, [opened])
 
     function closeBlock() {
-        setOpened(!opened)
+        setOpened(true)
     }
 
     return (
