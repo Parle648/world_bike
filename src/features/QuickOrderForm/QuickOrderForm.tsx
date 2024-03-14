@@ -3,6 +3,7 @@ import styles from './styles/quickOrderForm.module.scss';
 import { Link } from 'react-router-dom';
 import quickOrderFormProps from './types/quickOrderForm';
 import { useForm } from 'react-hook-form';
+import postQuickOrderRequest from './api/postQuickOrder';
 
 type QuickOrderForm = {
     name: string,
@@ -19,8 +20,11 @@ const QuickOrderForm = ({id}: quickOrderFormProps) => {
         },
     } = useForm<QuickOrderForm>();
 
-    function postQuickOrder(data: QuickOrderForm) {
+    function postQuickOrder(data: any) {
         console.log(data);
+        
+        postQuickOrderRequest(data)
+        .then((response: any) => console.log(response.created));
     };
 
     return (
