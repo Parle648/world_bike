@@ -1,0 +1,50 @@
+@import '../../../../../Scss/global/global.scss';
+
+.navigation {
+    width: 448px;
+    height: 100vh;
+    padding: 56px 34px;
+    background-color: #fff;
+    position: fixed;
+    z-index: 9;
+    right: -448px;
+    top: 0;
+    padding: 24px;
+
+    transition: .35s;
+
+    @include md-d {
+        width: 300px;
+        padding: 12px;
+    }
+}
+
+.navigationOpened {
+    right: 0;
+    transition: .35s;
+}
+
+.close {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-start;
+}
+
+.desktop {
+    display: block;
+
+    @include lg-d {
+        display: none;
+    }
+}
+
+.ttl {
+    font-family: "Inter";
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 49px;
+
+    margin-bottom: 24px;
+
+    color: #101010;
+}

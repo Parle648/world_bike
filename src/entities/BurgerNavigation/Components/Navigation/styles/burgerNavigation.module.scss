@@ -1,0 +1,15 @@
+.listItem {
+    margin-bottom: 15px;
+}
+
+.link {
+    font-family: "Inter";
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 29px;
+    color: #101010;
+
+    &:hover {
+        color: #F57520;
+    }
+}

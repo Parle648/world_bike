@@ -1,0 +1,13 @@
+@import '../../../../../Scss/global/global.scss';
+
+.mobile {
+    display: none;
+
+    @include lg-d {
+        display: block;
+    }
+}
+
+.blackLogo {
+    margin-bottom: 15px;
+}
