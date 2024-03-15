@@ -1,4 +1,6 @@
 export default function postQuickOrderRequest(data: any) {
+    console.log(data);
+    
     return new Promise((resolve, reject) => {
         try {
             resolve(fetch('http://localhost:3001/api/quick-orders', {
@@ -13,5 +15,4 @@ export default function postQuickOrderRequest(data: any) {
         }
     })
     .then((response: any) => response.json())
-    .then((respData: any) => console.log(respData))
 }
