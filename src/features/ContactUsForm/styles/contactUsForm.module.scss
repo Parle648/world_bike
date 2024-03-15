@@ -42,6 +42,7 @@
 .input {
     width: 295px;
     height: 46px;
+    margin-bottom: 10px;
     padding: 10px 16px;
     border-radius: 10px;
     color: #B3B3B3;
@@ -98,4 +99,20 @@
     &:hover {
         background-color: #B3B3B3;
     }
+}
+
+.label {
+    position: relative;
+}
+
+.errorTitle {
+    font-family: "Inter";
+    font-size: 14px;
+    color: red;
+    position: absolute;
+    top: -20px;
+}
+
+.invalidInput {
+    border:  1px solid red;
 }
