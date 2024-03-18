@@ -10,7 +10,8 @@ type provider = {
         },
         brands: string[],
         frame_materials: string[],
-        sortBy: string
+        sortBy: string,
+        search: string
     },
     currentProducts: [],
 }

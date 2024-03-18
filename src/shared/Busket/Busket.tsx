@@ -5,14 +5,14 @@ import { useLocalStorage } from '../hooks/useLocalStorage';
 const Busket = () => {
     const [isOrder, setIsOrder] = useState<boolean>(false);
 
-    useEffect(() => {
-        if (JSON.parse(localStorage.orderedProducts).length > 0) {
-            setIsOrder(true)
-        } else {
-            setIsOrder(false)
-        };
+    // useEffect(() => {
+    //     if (JSON.parse(localStorage.orderedProducts).length > 0) {
+    //         setIsOrder(true)
+    //     } else {
+    //         setIsOrder(false)
+    //     };
         
-    }, [localStorage.orderedProducts])
+    // }, [localStorage.orderedProducts])
 
     return (
         <div className={styles.block}>

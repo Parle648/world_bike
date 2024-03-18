@@ -12,7 +12,7 @@ const CatalogMainSection = () => {
     const [products, setProducts] = useLocalStorage([], 'products')
     
     const [productListState, setproductListState] = useState<provider>({
-        pagesCount: 5,
+        pagesCount: 4,
         currentPage: 1,
         currentFilters: {
             has: false,
@@ -23,10 +23,13 @@ const CatalogMainSection = () => {
             },
             brands: [],
             frame_materials: [],
-            sortBy: ''
+            sortBy: '',
+            search: ''
         },
         currentProducts: [],
     })
+    
+    const [filters, setFilters] = useLocalStorage(!localStorage.filters ? productListState.currentFilters : JSON.parse(localStorage.filters), 'filters')
 
     const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true);
 
@@ -192,6 +195,10 @@ const CatalogMainSection = () => {
             .then(() => setLoaderUnvisible(true));
         }
     }, [])
+
+    // useEffect(() => {
+    //     setFilters(productListState)
+    // }, [productListState])
 
     return (
         <div className='wrapper'>
