@@ -29,7 +29,8 @@ const currentFilters = createSlice({
             state.value[type].pop(value)
         },
         setParam (state, {payload}) {
-            console.log(payload);
+            const {attribute, content} = payload;
+            state.value[attribute] = content
         }
     }
 })

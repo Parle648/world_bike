@@ -1,7 +1,7 @@
 export default function getProductProperties(productId: number) {
     return new Promise((resolve, reject) => {
         try {
-            resolve(fetch(`https://wb-backend-a99n.onrender.com/api/product-properties/:${productId}`))
+            resolve(fetch(`localhost:3001/api/product-properties/:${productId}`))
         } catch (error) {
             reject(error)
         }

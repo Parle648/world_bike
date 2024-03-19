@@ -7,9 +7,10 @@ import { CatalogProvider } from '../CatalogProductList/catalogProvider/catalogPr
 import provider from '../CatalogProductList/catalogProvider/types/catalogProviderTypes';
 import setCatalogState from '../CatalogProductList/helpers/setCatalogState';
 import Spinner from '../../shared/components/Spinner/Spinner';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { choosePage, setPages } from '../../shared/lib/slices/pagesSlice';
-import { popParam, pushParam, setHasAttribute } from '../../shared/lib/slices/currentFilers';
+import { popParam, pushParam, setHasAttribute, setParam } from '../../shared/lib/slices/currentFilers';
+import { updateProducts } from '../../shared/lib/slices/Products';
 
 const CatalogMainSection = () => {
     const [products, setProducts] = useLocalStorage([], 'products')
@@ -39,35 +40,32 @@ const CatalogMainSection = () => {
     // 
 
     const dispatch = useDispatch();
+    const reduxFilters =  useSelector((state: any) => state.currentFilters.value);
+    const reduxPages =  useSelector((state: any) => state.pagesSlice.value);
+
+    console.log(JSON.stringify(reduxFilters));
+
+    useEffect(() => {
+        setLoaderUnvisible(false)
+        setCatalogState(reduxFilters, reduxPages.currentPage)
+        .then((data) => {
+            dispatch(updateProducts(JSON.parse(data.data)))
+            dispatch(setPages(JSON.parse(data.pagesCount)))
+            setLoaderUnvisible(true)
+            return data
+        });
+    }, [reduxFilters, reduxPages])
+    
 
     const handleCatalogState = (event: any) => {
         if ( event.target.dataset.element === "pagebtn" ) {
             setLoaderUnvisible(false);
             dispatch(choosePage(+event.target.dataset.value))
-            setCatalogState(productListState, setproductListState, +event.target.dataset.value)
-            .then((data: any) => dispatch(setPages(data.pagesCount)))
-            .then(() => setLoaderUnvisible(true));
         } else if (event.target.dataset.filter === "has") {
             setLoaderUnvisible(false);
             dispatch(setHasAttribute(event.target.checked))
-            setproductListState((prev: any) => {
-                setCatalogState({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["has"]: event.target.checked,
-                    }
-                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
-                return ({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["has"]: event.target.checked,
-                    }
-                })
-            })
+
         } else if (event.target.dataset.filter === "categories") {
-            setLoaderUnvisible(false);
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -79,29 +77,7 @@ const CatalogMainSection = () => {
                     type: event.target.dataset.filter,
                 }))
             }
-            setproductListState((prev: any) => {
-                const categories = prev.currentFilters.categories;
-                setCatalogState({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["categories"]: event.target.checked ? 
-                        [...prev.currentFilters.categories, event.target.dataset.name] : 
-                        categories.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
-                return ({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["categories"]: event.target.checked ? 
-                        [...prev.currentFilters.categories, event.target.dataset.name] : 
-                        categories.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                })
-            })
         } else if (event.target.dataset.filter === "brands") {
-            setLoaderUnvisible(false);
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -113,29 +89,7 @@ const CatalogMainSection = () => {
                     type: event.target.dataset.filter,
                 }))
             }
-            setproductListState((prev: any) => {
-                const brands = prev.currentFilters.brands;
-                setCatalogState({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["brands"]: event.target.checked ? 
-                        [...prev.currentFilters.brands, event.target.dataset.name] : 
-                        brands.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
-                return ({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["brands"]: event.target.checked ? 
-                        [...prev.currentFilters.brands, event.target.dataset.name] : 
-                        brands.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                })
-            })
         } else if (event.target.dataset.filter === "frame_materials") {
-            setLoaderUnvisible(false);
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -147,45 +101,27 @@ const CatalogMainSection = () => {
                     type: event.target.dataset.filter,
                 }))
             }
-            setproductListState((prev: any) => {
-                const frame_materials = prev.currentFilters.frame_materials;
-                setCatalogState({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["frame_materials"]: event.target.checked ? 
-                        [...prev.currentFilters.frame_materials, event.target.dataset.name] : 
-                        frame_materials.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
-                return ({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["frame_materials"]: event.target.checked ? 
-                        [...prev.currentFilters.frame_materials, event.target.dataset.name] : 
-                        frame_materials.filter((string: string) => string !== event.target.dataset.name)
-                    }
-                })
-            })
         } else if (event.target.dataset.filter === "sort_by") {
-            setLoaderUnvisible(false);
-            setproductListState((prev: any) => {
-                setCatalogState({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["sortBy"]: event.target.innerText
-                    }
-                }, setproductListState, 1).then(() => setLoaderUnvisible(true));
-                return ({
-                    ...prev,
-                    ["currentFilters"]: {
-                        ...prev.currentFilters,
-                        ["sortBy"]: event.target.innerText
-                    }
-                })
-            })
+            dispatch(setParam({
+                attribute: 'sortBy', 
+                content: event.target.innerText
+        }))
+            // setproductListState((prev: any) => {
+            //     setCatalogState({
+            //         ...prev,
+            //         ["currentFilters"]: {
+            //             ...prev.currentFilters,
+            //             ["sortBy"]: event.target.innerText
+            //         }
+            //     }, setproductListState, 1).then(() => setLoaderUnvisible(true));
+            //     return ({
+            //         ...prev,
+            //         ["currentFilters"]: {
+            //             ...prev.currentFilters,
+            //             ["sortBy"]: event.target.innerText
+            //         }
+            //     })
+            // })
         }
     }
 
@@ -194,7 +130,7 @@ const CatalogMainSection = () => {
         if (JSON.stringify(productListState?.currentFilters) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
             new Promise((resolve, reject) => {
                 try {
-                    resolve(fetch(`https://wb-backend-a99n.onrender.com/api/products/pages/:${1}`))
+                    resolve(fetch(`http://localhost:3001/api/products/pages/:${1}`))
                 } catch (error) {
                     reject(console.error(error));
                 }
@@ -214,7 +150,7 @@ const CatalogMainSection = () => {
         } else {
             new Promise((resolve, reject) => {
                 try {
-                    resolve(fetch(`https://wb-backend-a99n.onrender.com/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${productListState.currentPage}`));
+                    resolve(fetch(`http://localhost:3001/api/getproducts/filters?filters=${JSON.stringify(productListState.currentFilters)}&currentPage=${productListState.currentPage}`));
                 } catch (error) {
                     reject(console.error(error));
                 };

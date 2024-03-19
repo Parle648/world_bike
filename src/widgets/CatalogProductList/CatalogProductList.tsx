@@ -9,6 +9,7 @@ import CatalogFiltersForm from '../../features/CatalogFiltersForm/CatalogFilters
 import close from '../../imgs/close.svg';
 
 import { CatalogProvider } from './catalogProvider/catalogProvider';
+import { useSelector } from 'react-redux';
 
 const CatalogProductList = () => {
     const [filtersOpened, setFiltersOpened] = useState<boolean>(false);
@@ -17,7 +18,7 @@ const CatalogProductList = () => {
         setFiltersOpened(!filtersOpened);
     };
 
-    const providerData = useContext(CatalogProvider);
+    const products = useSelector((state: any) => state.products.value)
 
     return (
         <div className={styles.block}>
@@ -54,7 +55,7 @@ const CatalogProductList = () => {
                 {/* {products.length === 0 && 
                 <ImageGrid />
                 } */}
-                {providerData?.productListState.currentProducts ? providerData?.productListState.currentProducts.map((product: any) => {
+                {products? products.map((product: any) => {
                     return (
                         <ProductListCard 
                             key={product.id} 

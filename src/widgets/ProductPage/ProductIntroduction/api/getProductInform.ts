@@ -1,7 +1,7 @@
 function getProductInform (productId: number) {
     return new Promise((resolve, reject) => {
         try {
-            resolve(fetch(`https://wb-backend-a99n.onrender.com/api/products/:${productId}`))
+            resolve(fetch(`localhost:3001/api/products/:${productId}`))
         } catch (error) {
             reject(error)
         }
