@@ -31,10 +31,14 @@ const currentFilters = createSlice({
         setParam (state, {payload}) {
             const {attribute, content} = payload;
             state.value[attribute] = content
-        }
+        },
+        setCost (state, {payload}) {
+            const {attribute, value} = payload
+            state.value.cost[attribute] = value
+        },
     }
 })
 
-export const { setHasAttribute, pushParam, popParam, setParam } = currentFilters.actions;
+export const { setHasAttribute, pushParam, popParam, setParam, setCost } = currentFilters.actions;
 
 export default currentFilters.reducer;

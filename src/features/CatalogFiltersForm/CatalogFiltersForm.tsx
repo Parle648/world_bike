@@ -174,22 +174,9 @@ const CatalogFiltersForm = memo(() => {
                     id='first-input'
                     placeholder={``} 
                     name='first'
-                    onInput={((event: any) => {
-                        // const newStorage: {[key: string]: any} = {
-                        //     has: storage.has, 
-                        //     categories: storage.categories, 
-                        //     cost: storage.cost, 
-                        //     brands: storage.brands, 
-                        //     frame_materials: storage.frame_materials
-                        // }
-
-                        // setCost([event.target.value, cost[1]]);
-                        // newStorage.cost.from = event.target.value;
-                        // setLocalStorage(newStorage);
-                    })}
-                    onBlur={() => {
-                        // getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
-                    }} />
+                    data-filter='cost'
+                    data-name='from'
+                    onBlur={catalogStore?.handleCatalogState} />
                     
                     -
 
@@ -197,23 +184,10 @@ const CatalogFiltersForm = memo(() => {
                     type="number" 
                     id='second-input'
                     placeholder={`${cost[1]}`} 
-                    // value={storage.cost.to}
                     name='second'
-                    onInput={((event: any) => {
-                        // const newStorage: {[key: string]: any} = {
-                        //     has: storage.has, 
-                        //     categories: storage.categories, 
-                        //     cost: storage.cost, 
-                        //     brands: storage.brands, 
-                        //     frame_materials: storage.frame_materials
-                        // }
-                        // setCost([cost[0], event.target.value]);
-                        // newStorage.cost.to = event.target.value;
-                        // setLocalStorage(newStorage);
-                    })} 
-                    onBlur={() => {
-                        // getProductsByProps(`filters=${JSON.stringify(storage)}`).then((data: any) => console.log(data))
-                    }} />
+                    data-filter='cost'
+                    data-name='to'
+                    onBlur={catalogStore?.handleCatalogState} />
                 </div>
 
             </div>
