@@ -5,7 +5,7 @@ import ProductSnippet from '../../entities/ProductSnippet/ProductSnippet';
 import { Link } from 'react-router-dom';
 import BusketInfo from './Components/BusketInfo/BusketInfo';
 import NewBikes from '../MainPage/NewBikes/NewBikes';
-import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
+import { useLocalStorage } from '../../shared/lib/hooks/useLocalStorage';
 
 const BusketPageMain = () => {
     const [orderedProducts, setOrderedProducts] = useLocalStorage([], 'orderedProducts');

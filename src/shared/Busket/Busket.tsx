@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styles from './styles/busket.module.scss';
-import { useLocalStorage } from '../hooks/useLocalStorage';
+import { useLocalStorage } from '../lib/hooks/useLocalStorage';
 
 const Busket = () => {
     const [isOrder, setIsOrder] = useState<boolean>(false);

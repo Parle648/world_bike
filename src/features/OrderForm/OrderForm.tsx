@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from './styles/orderForm.module.scss';
 import { Link } from 'react-router-dom';
 import close from '../../imgs/close.svg';
-import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
+import { useLocalStorage } from '../../shared/lib/hooks/useLocalStorage';
 import { useForm } from 'react-hook-form';
 import postOrder from './api/postOrder';
 import Spinner from '../../shared/components/Spinner/Spinner';

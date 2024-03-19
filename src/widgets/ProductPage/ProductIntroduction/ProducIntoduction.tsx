@@ -4,7 +4,7 @@ import styles from './styles/productIntroduction.module.scss';
 import bicycle from '../../../imgs/product-page-img.png';
 import getProductInform from './api/getProductInform';
 import productInformProps from './types/productInformProps';
-import { useLocalStorage } from '../../../shared/hooks/useLocalStorage';
+import { useLocalStorage } from '../../../shared/lib/hooks/useLocalStorage';
 import Spinner from '../../../shared/components/Spinner/Spinner';
 
 const ProducIntoduction = () => {

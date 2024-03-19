@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './styles/catalogMainSection.module.scss';
 import CatalogFiltersForm from '../../features/CatalogFiltersForm/CatalogFiltersForm';
 import CatalogProductList from '../CatalogProductList/CatalogProductList';
-import { useLocalStorage } from '../../shared/hooks/useLocalStorage';
+import { useLocalStorage } from '../../shared/lib/hooks/useLocalStorage';
 import { CatalogProvider } from '../CatalogProductList/catalogProvider/catalogProvider';
 import provider from '../CatalogProductList/catalogProvider/types/catalogProviderTypes';
 import setCatalogState from '../CatalogProductList/helpers/setCatalogState';

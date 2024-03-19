@@ -1,6 +1,8 @@
 import React, { Suspense, lazy } from 'react';
+import { Provider } from 'react-redux';
 import '../Scss/styles.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import store from './redux/store/store';
 const AboutUs = lazy(() => import('../pages/AboutUs/AboutUs'))
 const BicycleWorkshop = lazy(() => import('../pages/BicycleWorkshop/BicycleWorkshop'))
 const Blog = lazy(() => import('../pages/Blog/Blog'))
@@ -21,73 +23,75 @@ const Spinner = lazy(() => import('../shared/components/Spinner/Spinner'))
 
 function App() {
   return (
-    <div className="App">
-      <ToTop />
-      <BrowserRouter>
-        <Routes>
-          <Route path='/' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Main />
-          </Suspense>}></Route>
-          <Route path='/catalog' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Catalog />
-          </Suspense>}></Route>
-          <Route path='/account' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <AccountPage />
-          </Suspense>}></Route>
-          <Route path='/catalog/:id' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <ProductPage />
-          </Suspense>}></Route>
-          <Route path='/bicycle-workshop' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <BicycleWorkshop />
-          </Suspense>}></Route>
-          <Route path='/storage' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Storage />
-          </Suspense>}></Route>
-          <Route path='/guarantee' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Guarantee />
-          </Suspense>}></Route>
-          <Route path='/privacy-policy' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <PrivacyPolicy />
-          </Suspense>}></Route>
-          <Route path='/blog' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Blog />
-          </Suspense>}></Route>
-          <Route path='/blog/:id' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <BlogArticle />
-          </Suspense>}></Route>
-          <Route path='/delivery' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <DeliveryAndPayment />
-          </Suspense>}></Route>
-          <Route path='/about-us' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <AboutUs />
-          </Suspense>}></Route>
-          <Route path='/contacts' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <Contacts />
-          </Suspense>}></Route>
-          <Route path='/order' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <OrderPage />
-          </Suspense>}></Route>
-          <Route path='/busket' element={
-          <Suspense fallback={<Spinner loaderUnvisible={false} />}>
-            <BusketPage />
-          </Suspense>}></Route>
-        </Routes>
-      </BrowserRouter>
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <ToTop />
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Main />
+            </Suspense>}></Route>
+            <Route path='/catalog' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Catalog />
+            </Suspense>}></Route>
+            <Route path='/account' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <AccountPage />
+            </Suspense>}></Route>
+            <Route path='/catalog/:id' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <ProductPage />
+            </Suspense>}></Route>
+            <Route path='/bicycle-workshop' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <BicycleWorkshop />
+            </Suspense>}></Route>
+            <Route path='/storage' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Storage />
+            </Suspense>}></Route>
+            <Route path='/guarantee' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Guarantee />
+            </Suspense>}></Route>
+            <Route path='/privacy-policy' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <PrivacyPolicy />
+            </Suspense>}></Route>
+            <Route path='/blog' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Blog />
+            </Suspense>}></Route>
+            <Route path='/blog/:id' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <BlogArticle />
+            </Suspense>}></Route>
+            <Route path='/delivery' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <DeliveryAndPayment />
+            </Suspense>}></Route>
+            <Route path='/about-us' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <AboutUs />
+            </Suspense>}></Route>
+            <Route path='/contacts' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <Contacts />
+            </Suspense>}></Route>
+            <Route path='/order' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <OrderPage />
+            </Suspense>}></Route>
+            <Route path='/busket' element={
+            <Suspense fallback={<Spinner loaderUnvisible={false} />}>
+              <BusketPage />
+            </Suspense>}></Route>
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </Provider>
   );
 }
 
