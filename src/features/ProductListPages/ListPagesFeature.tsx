@@ -6,8 +6,12 @@ import getProductsPage from './api/getProducts';
 import productPageInterface from './types/productPageInterface';
 import productListPagesProps from './types/productListPagesProps';
 import { CatalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ListPagesFeature = () => {
+    const dispatch = useDispatch();
+    const {currentPage, pagesCount} = useSelector((state: any) => state.pagesSlice.value)
+    
     const [page, setPage] = React.useState<number>(1);
 
     // React.useEffect(() => {
@@ -22,7 +26,7 @@ const ListPagesFeature = () => {
 
     const pages = [];
 
-    for (let index = 1; index <= (catalogStore !== undefined ? catalogStore?.productListState.pagesCount : 0); index++) {
+    for (let index = 1; index <= pagesCount; index++) {
         pages.push(index);
     }
 
@@ -35,7 +39,7 @@ const ListPagesFeature = () => {
                     {pages.map((pageNumber: number) => {
                         return (
                             <button 
-                            className={`${styles.page} ${pageNumber === catalogStore?.productListState.currentPage && styles.currentPage}`} 
+                            className={`${styles.page} ${pageNumber === currentPage && styles.currentPage}`} 
                             data-element='pagebtn'
                             data-value={pageNumber}
                             onClick={catalogStore?.handleCatalogState} 
@@ -44,10 +48,6 @@ const ListPagesFeature = () => {
                             </button>
                         )
                     })}
-                    {/* <button className={`${styles.page} ${page === 2 && styles.currentPage}`} onClick={choosePage} >2</button>
-                    <button className={`${styles.page} ${page === 3 && styles.currentPage}`} onClick={choosePage} >3</button>
-                    <button className={`${styles.page} ${page === 4 && styles.currentPage}`} onClick={choosePage} >4</button>
-                    <button className={`${styles.page} ${page === 5 && styles.currentPage}`} onClick={choosePage} >...</button> */}
                 </div>
             </div>
             <img className={styles.reversedArow} src={singleArrow} alt="singleArrow" />

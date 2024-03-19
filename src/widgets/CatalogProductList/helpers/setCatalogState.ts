@@ -17,6 +17,7 @@ export default function setCatalogState(productListState: any, setproductListSta
                     ["currentPage"]: currentPage,
                 })
             });
+            return data;
         });
     } else {
         return new Promise((resolve, reject) => {
@@ -36,6 +37,7 @@ export default function setCatalogState(productListState: any, setproductListSta
                     ["currentPage"]: currentPage,
                 })
             });
+            return data;
         })
     }
 }

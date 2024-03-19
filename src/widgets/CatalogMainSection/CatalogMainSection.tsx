@@ -7,6 +7,8 @@ import { CatalogProvider } from '../CatalogProductList/catalogProvider/catalogPr
 import provider from '../CatalogProductList/catalogProvider/types/catalogProviderTypes';
 import setCatalogState from '../CatalogProductList/helpers/setCatalogState';
 import Spinner from '../../shared/components/Spinner/Spinner';
+import { useDispatch } from 'react-redux';
+import { choosePage, setPages } from '../../shared/lib/slices/pagesSlice';
 
 const CatalogMainSection = () => {
     const [products, setProducts] = useLocalStorage([], 'products')
@@ -33,16 +35,23 @@ const CatalogMainSection = () => {
 
     const [loaderUnvisible, setLoaderUnvisible] = useState<boolean>(true);
 
+    // 
+
+    const dispatch = useDispatch();
+
     const handleCatalogState = (event: any) => {
         if ( event.target.dataset.element === "pagebtn" ) {
             setLoaderUnvisible(false);
-            setproductListState((prev: any) => {
-                return ({
-                    ...prev,
-                    ["currentPage"]: +event.target.dataset.value,
-                })
-            })
-            setCatalogState(productListState, setproductListState, +event.target.dataset.value).then(() => setLoaderUnvisible(true));
+            dispatch(choosePage(+event.target.dataset.value))
+            // setproductListState((prev: any) => {
+            //     return ({
+            //         ...prev,
+            //         ["currentPage"]: +event.target.dataset.value,
+            //     })
+            // })
+            setCatalogState(productListState, setproductListState, +event.target.dataset.value)
+            .then((data: any) => dispatch(setPages(data.pagesCount)))
+            .then(() => setLoaderUnvisible(true));
         } else if (event.target.dataset.filter === "has") {
             setLoaderUnvisible(false);
             setproductListState((prev: any) => {

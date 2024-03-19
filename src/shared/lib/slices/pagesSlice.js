@@ -10,10 +10,10 @@ const pagesSlice = createSlice({
     },
     reducers: {
         setPages (state, {payload}) {
-            state.value.pagesCount = payload.pages;
+            state.value.pagesCount = payload;
         },
         choosePage (state, {payload}) {
-            state.value.currentPage = payload.page;
+            state.value.currentPage = payload;
         },
     }
 });
