@@ -17,13 +17,16 @@ const currentFilters = createSlice({
         },
     },
     reducers: {
+        setHasAttribute (state, {payload}) {
+            state.value.has = payload;
+        },
         pushParam (state, {payload}) {
-            const name = Object.keys(payload)[0]
-            state.value[name].push(payload[name])
+            const {value, type} =  payload;
+            state.value[type].push(value)
         },
         popParam (state, {payload}) {
-            const name = Object.keys(payload)[0]
-            state.value[name].pop(payload[name])
+            const {value, type} =  payload;
+            state.value[type].pop(value)
         },
         setParam (state, {payload}) {
             console.log(payload);
@@ -31,6 +34,6 @@ const currentFilters = createSlice({
     }
 })
 
-export const { pushParam, popParam, setParam } = currentFilters.actions;
+export const { setHasAttribute, pushParam, popParam, setParam } = currentFilters.actions;
 
 export default currentFilters.reducer;
