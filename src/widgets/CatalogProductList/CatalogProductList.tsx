@@ -10,6 +10,7 @@ import close from '../../imgs/close.svg';
 
 import { CatalogProvider } from './catalogProvider/catalogProvider';
 import { useSelector } from 'react-redux';
+import ResetSearchFeature from '../../features/ResetSearchFeature/ResetSearchFeature';
 
 const CatalogProductList = () => {
     const [filtersOpened, setFiltersOpened] = useState<boolean>(false);
@@ -24,6 +25,7 @@ const CatalogProductList = () => {
         <div className={styles.block}>
             <div className={styles.activities}>
                 <SortByFeature />
+                <ResetSearchFeature />
                 <div className={styles.chooseListTemplate}>
                     <div className={styles.ninePlates}>
                         <div className={styles.ninePlatesItem}></div>
