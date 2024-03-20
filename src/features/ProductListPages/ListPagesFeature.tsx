@@ -7,6 +7,7 @@ import productPageInterface from './types/productPageInterface';
 import productListPagesProps from './types/productListPagesProps';
 import { CatalogProvider } from '../../widgets/CatalogProductList/catalogProvider/catalogProvider';
 import { useDispatch, useSelector } from 'react-redux';
+import { choosePage, decrementPage, incrementPage } from '../../shared/lib/slices/pagesSlice';
 
 const ListPagesFeature = () => {
     const dispatch = useDispatch();
@@ -29,11 +30,32 @@ const ListPagesFeature = () => {
     for (let index = 1; index <= pagesCount; index++) {
         pages.push(index);
     }
+    const pagesSlice = useSelector((state: any) => state.pagesSlice.value)
+
+    function handlePage(event: any) {
+        console.log(event.currentTarget.dataset.name);
+        switch (event.currentTarget.dataset.name) {
+            case 'tofirst':
+                dispatch(choosePage(1))
+                break
+            case 'toprevious':
+                dispatch(decrementPage());
+                break
+            case 'tonext':
+                dispatch(incrementPage());
+                break
+            case 'tolast':
+                dispatch(choosePage(pagesSlice.pagesCount))
+                break
+            default:
+                break;
+        }
+    }
 
     return (
         <div className={styles.block}>
-            <img className={styles.slideBtn} src={twinArrow} alt="twinArrow" />
-            <img className={styles.slideBtn} src={singleArrow} alt="singleArrow" />
+            <img className={styles.slideBtn} data-name='tofirst' onClick={handlePage} src={twinArrow} alt="twinArrow" />
+            <img className={styles.slideBtn} data-name='toprevious' onClick={handlePage} src={singleArrow} alt="singleArrow" />
             <div className={styles.pagesContainer}>
                 <div className={styles.pages}>
                     {pages.map((pageNumber: number) => {
@@ -50,8 +72,8 @@ const ListPagesFeature = () => {
                     })}
                 </div>
             </div>
-            <img className={styles.reversedArow} src={singleArrow} alt="singleArrow" />
-            <img className={styles.reversedArow} src={twinArrow} alt="twinArrow" />
+            <img className={styles.reversedArow} data-name='tonext' onClick={handlePage} src={singleArrow} alt="singleArrow" />
+            <img className={styles.reversedArow} data-name='tolast' onClick={handlePage} src={twinArrow} alt="twinArrow" />
         </div>
     );
 };

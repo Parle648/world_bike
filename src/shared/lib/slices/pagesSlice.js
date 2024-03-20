@@ -15,9 +15,17 @@ const pagesSlice = createSlice({
         choosePage (state, {payload}) {
             state.value.currentPage = payload;
         },
+        incrementPage (state) {
+            state.value.currentPage += 1;
+        },
+        decrementPage (state) {
+            if (state.value.currentPage !== 1) {
+                state.value.currentPage -= 1;
+            }
+        },
     }
 });
 
-export const { setPages, choosePage } = pagesSlice.actions;
+export const { setPages, choosePage, incrementPage, decrementPage } = pagesSlice.actions;
 
 export default pagesSlice.reducer;
