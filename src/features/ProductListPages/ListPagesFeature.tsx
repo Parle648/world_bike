@@ -42,7 +42,9 @@ const ListPagesFeature = () => {
                 dispatch(decrementPage());
                 break
             case 'tonext':
-                dispatch(incrementPage());
+                if (pagesSlice.currentPage !== pagesSlice.pagesCount) {
+                    dispatch(incrementPage());
+                }
                 break
             case 'tolast':
                 dispatch(choosePage(pagesSlice.pagesCount))
