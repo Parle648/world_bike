@@ -21,13 +21,25 @@ const CatalogProductList = () => {
 
     const products = useSelector((state: any) => state.products.value)
 
+    const [twooColumns, setTwooColumns] = useState<boolean>(false);
+
+    function chooseLayout(event: any) {
+        event.currentTarget.nextElementSibling?.classList.remove(styles.activeLayout)
+        event.currentTarget.previousElementSibling?.classList.remove(styles.activeLayout)
+        event.currentTarget.classList.add(styles.activeLayout);
+        if ( event.currentTarget.classList.contains(styles.fourPlates)) {
+            setTwooColumns(true)
+        } else {
+            setTwooColumns(false)
+        }
+    }
     return (
         <div className={styles.block}>
             <div className={styles.activities}>
                 <SortByFeature />
                 <ResetSearchFeature />
                 <div className={styles.chooseListTemplate}>
-                    <div className={styles.ninePlates}>
+                    <div className={`${styles.ninePlates} ${styles.activeLayout}`} onClick={chooseLayout}>
                         <div className={styles.ninePlatesItem}></div>
                         <div className={styles.ninePlatesItem}></div>
                         <div className={styles.ninePlatesItem}></div>
@@ -38,7 +50,7 @@ const CatalogProductList = () => {
                         <div className={styles.ninePlatesItem}></div>
                         <div className={styles.ninePlatesItem}></div>
                     </div>
-                    <div className={styles.fourPlates}>
+                    <div className={styles.fourPlates} onClick={chooseLayout}>
                         <div className={styles.fourPlatesItem}></div>
                         <div className={styles.fourPlatesItem}></div>
                         <div className={styles.fourPlatesItem}></div>
@@ -53,7 +65,7 @@ const CatalogProductList = () => {
                     <CatalogFiltersForm />
                 </div>
             </div>
-            <div className={styles.list}>
+            <div className={`${styles.list} ${twooColumns && styles.twooColumns}`}>
                 {/* {products.length === 0 && 
                 <ImageGrid />
                 } */}

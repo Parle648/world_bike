@@ -1,5 +1,7 @@
 export default function setCatalogState(productListState: any, currentPage: number) {
-    if (JSON.stringify(productListState) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":""}') {
+    console.log(JSON.stringify(productListState));
+    
+    if (JSON.stringify(productListState) === '{"has":false,"categories":[],"cost":{"from":0,"to":1200000},"brands":[],"frame_materials":[],"sortBy":"","search":""}') {
         return new Promise((resolve, reject) => {
             try {
                 resolve(fetch(`http://localhost:3001/api/products/pages/:${currentPage}`))
@@ -8,9 +10,9 @@ export default function setCatalogState(productListState: any, currentPage: numb
             }
         })
         .then((response: any) => response.json())
-        .then((data: any) => {
-            return data;
-        });
+        // .then((data: any) => {
+        //     return data;
+        // });
     } else {
         return new Promise((resolve, reject) => {
             try {

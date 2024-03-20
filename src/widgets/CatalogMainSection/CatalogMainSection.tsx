@@ -22,8 +22,8 @@ const CatalogMainSection = () => {
         setLoaderUnvisible(false)
         setCatalogState(reduxFilters, reduxPages.currentPage)
         .then((data) => {
-            dispatch(updateProducts(JSON.parse(data.data)))
-            dispatch(setPages(JSON.parse(data.pagesCount)))
+            dispatch(updateProducts(data.products))
+            dispatch(setPages(JSON.parse(data.pages)))
             setLoaderUnvisible(true)
             return data
         });
@@ -37,8 +37,10 @@ const CatalogMainSection = () => {
         } else if (event.target.dataset.filter === "has") {
             setLoaderUnvisible(false);
             dispatch(setHasAttribute(event.target.checked))
+            dispatch(choosePage(1))
 
         } else if (event.target.dataset.filter === "categories") {
+            dispatch(choosePage(1))
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -51,6 +53,7 @@ const CatalogMainSection = () => {
                 }))
             }
         } else if (event.target.dataset.filter === "brands") {
+            dispatch(choosePage(1))
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -63,6 +66,7 @@ const CatalogMainSection = () => {
                 }))
             }
         } else if (event.target.dataset.filter === "frame_materials") {
+            dispatch(choosePage(1))
             if (event.target.checked) {
                 dispatch(pushParam({
                     value: event.target.dataset.name, 
@@ -75,13 +79,14 @@ const CatalogMainSection = () => {
                 }))
             }
         } else if (event.target.dataset.filter === "sort_by") {
+            dispatch(choosePage(1))
             dispatch(setParam({
                 attribute: 'sortBy', 
                 content: event.target.innerText
             }))
         }
         else if (event.target.dataset.filter === "cost") {
-            console.log(event.target.dataset.name, +event.target.value);
+            dispatch(choosePage(1))
             dispatch(setCost({
                 attribute: event.target.dataset.name, 
                 value: +event.target.value
